@@ -39,3 +39,6 @@ C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBS
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.Properties.Resources.resources
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.csproj.GenerateResource.Cache
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.exe
+M:\Git Project\RBSoft\RBSoft\bin\Debug\RBSoft.exe.config
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.exe
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.pdb
