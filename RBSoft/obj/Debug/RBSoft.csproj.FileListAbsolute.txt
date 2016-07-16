@@ -1,0 +1,41 @@
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\bin\Debug\RBSoft.exe.config
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\bin\Debug\RBSoft.exe
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\bin\Debug\RBSoft.pdb
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.csprojResolveAssemblyReference.cache
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\obj\Debug\MainWindow.g.cs
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\obj\Debug\App.g.cs
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft_MarkupCompile.cache
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft_MarkupCompile.lref
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\obj\Debug\MainWindow.baml
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.g.resources
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.Properties.Resources.resources
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.csproj.GenerateResource.Cache
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.exe
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.pdb
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\obj\Debug\DataEntry\DataEntry.g.cs
+c:\users\arnob\documents\visual studio 2015\Projects\RBSoft\RBSoft\obj\Debug\DataEntry\DataEntry.baml
+C:\Users\User\Documents\Arnob\Visual Studio 2015\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\DataEntry\DataEntry.g.cs
+C:\Users\User\Documents\Arnob\Visual Studio 2015\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\MainWindow.g.cs
+C:\Users\User\Documents\Arnob\Visual Studio 2015\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\App.g.cs
+C:\Users\User\Documents\Arnob\Visual Studio 2015\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft_MarkupCompile.cache
+C:\Users\User\Documents\Arnob\Visual Studio 2015\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft_MarkupCompile.lref
+C:\Users\User\Documents\Arnob\Visual Studio 2015\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\DataEntry\DataEntry.baml
+C:\Users\User\Documents\Arnob\Visual Studio 2015\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\MainWindow.baml
+C:\Users\User\Documents\Arnob\Visual Studio 2015\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.g.resources
+C:\Users\User\Documents\Arnob\Visual Studio 2015\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\bin\Debug\RBSoft.exe.config
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\bin\Debug\RBSoft.exe
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\bin\Debug\RBSoft.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\DataEntry\DataEntry.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\MainWindow.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\App.g.cs
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft_MarkupCompile.cache
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft_MarkupCompile.lref
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\DataEntry\DataEntry.baml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\MainWindow.baml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.g.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.Properties.Resources.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBSoft.exe

@@ -1,0 +1,160 @@
+﻿<Window x:Class="RBSoft.DataEntry.DataEntry"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RBSoft.DataEntry"
+        mc:Ignorable="d"
+        WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" 
+         Width="1000" Height="700"
+        Title="DataEntry" >
+    <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+
+
+
+
+
+        <!--Down Work -->
+        <Button x:Name="button" HorizontalAlignment="Left" Margin="876,622,0,0" VerticalAlignment="Top" Width="75" Height="58" BorderThickness="0" Click="button_Click" ClickMode="Press" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="True">
+            <Button.Background>
+                <ImageBrush ImageSource="/RBSoft;component/Picture/BackButton.png" Stretch="Uniform">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1" ScaleX="1"/>
+                            <SkewTransform AngleY="0" AngleX="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="EntryToDB" Content="Record Data" HorizontalAlignment="Left" Margin="38,636,0,0" VerticalAlignment="Top" Width="139" Height="36" Click="entryToDB"/>
+        <!--Client Info-->
+        <Grid HorizontalAlignment="Left" Height="192" Margin="9,56,0,0" VerticalAlignment="Top" Width="448">
+
+            <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="166,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="261"/>
+            <Label x:Name="Name" Content="Name :" HorizontalAlignment="Left" Margin="55,63,0,0" VerticalAlignment="Top" Width="48"/>
+
+            <TextBox x:Name="txtContectNumber" HorizontalAlignment="Left" Height="23" Margin="166,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="261"/>
+            <Label x:Name="ContectNumber" Content="Contect Number :" HorizontalAlignment="Left" Margin="55,98,0,0" VerticalAlignment="Top" Width="106"/>
+            <Label x:Name="Hearder1" Content="Client Information  :" HorizontalAlignment="Left" Height="29" Margin="17,10,0,0" VerticalAlignment="Top" Width="122"/>
+            <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Height="23" Margin="166,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="261"/>
+            <Label x:Name="Add" Content="Address :" HorizontalAlignment="Left" Margin="55,138,0,0" VerticalAlignment="Top" Width="106"/>
+            <TextBox x:Name="txtManualBillNO" HorizontalAlignment="Left" Height="23" Margin="328,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="99"/>
+            <Label x:Name="ManualID" Content="Manual Bill No :" HorizontalAlignment="Left" Margin="265,27,0,0" VerticalAlignment="Top" Width="48"/>
+
+        </Grid>
+
+        <!--Print Info-->
+        <Grid HorizontalAlignment="Left" Height="342" Margin="10,268,0,0" VerticalAlignment="Top" Width="447">
+            <Label x:Name="PrintName" Content="Print Name :" HorizontalAlignment="Left" Margin="49,27,0,0" VerticalAlignment="Top" Width="106"/>
+            <TextBox x:Name="txtPrintName" HorizontalAlignment="Left" Height="23" Margin="133,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="261"/>
+
+            <ComboBox x:Name="PrintType" HorizontalAlignment="Left" Margin="133,66,0,0" VerticalAlignment="Top" Width="261" IsEditable="False" >
+                <ComboBoxItem  Name="pvc">PVC</ComboBoxItem>
+                <ComboBoxItem Name="pana">Pana</ComboBoxItem>
+                <ComboBoxItem  Name="stiker">Stiker</ComboBoxItem>
+            </ComboBox>
+            <Label x:Name="PrintTypesd" Content="Print Type  :" HorizontalAlignment="Left" Margin="49,62,0,0" VerticalAlignment="Top" Width="84"/>
+
+            <Label x:Name="PrintHeight" Content="Height:" HorizontalAlignment="Left" Margin="55,109,0,0" VerticalAlignment="Top" Width="65"/>
+            <TextBox x:Name="txtHight" HorizontalAlignment="Left" Height="23" Margin="133,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="69"/>
+
+            <Label x:Name="PrintWide" Content="Wide :" HorizontalAlignment="Left" Margin="229,108,0,0" VerticalAlignment="Top" Width="47"/>
+            <TextBox x:Name="txtWide" HorizontalAlignment="Left" Height="24" Margin="296,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="76"/>
+
+            <Label x:Name="Sft" Content="SFT :" HorizontalAlignment="Left" Margin="56,142,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.563,-0.788"/>
+            <TextBox x:Name="txtsft" HorizontalAlignment="Left" Height="23" Margin="133,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143" RenderTransformOrigin="0.493,-1.413" TextChanged="txtsft_TextChanged"/>
+
+            <Label x:Name="Rate" Content="Rate :" HorizontalAlignment="Left" Margin="55,178,0,0" VerticalAlignment="Top" Width="65"/>
+            <TextBox x:Name="txtRate" HorizontalAlignment="Left" Height="24" Margin="133,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
+
+            <Label x:Name="Quntity" Content="Quantity :" HorizontalAlignment="Left" Margin="49,206,0,0" VerticalAlignment="Top" Width="106"/>
+            <TextBox x:Name="txtquntity" HorizontalAlignment="Left" Height="22" Margin="133,210,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
+
+            <Label x:Name="TotalRate" Content="Total Rate :" HorizontalAlignment="Left" Margin="49,240,0,0" VerticalAlignment="Top" Width="78"/>
+            <TextBox x:Name="txtTotalRate" HorizontalAlignment="Left" Height="23" Margin="133,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
+
+            <Label x:Name="Printstatus" Content="Print Status :" HorizontalAlignment="Left" Margin="49,271,0,0" VerticalAlignment="Top" Width="106"/>
+
+            <ComboBox x:Name="PrintStatus" HorizontalAlignment="Left" Margin="133,275,0,0" VerticalAlignment="Top" Width="261" IsEditable="False" >
+                <ComboBoxItem  Name="Ready">Ready</ComboBoxItem>
+                <ComboBoxItem Name="Done">Done</ComboBoxItem>
+                <ComboBoxItem  Name="DesignInProgress">Design In Progress</ComboBoxItem>
+            </ComboBox>
+            <Label x:Name="dsvj" Content="Print Work 1 :" HorizontalAlignment="Left" Margin="10,-3,0,0" VerticalAlignment="Top" Width="106"/>
+
+        </Grid>
+        <Label x:Name="label" Content="Work Oder " HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top" Width="339" Height="59" FontSize="22"/>
+        <Grid IsEnabled="False" HorizontalAlignment="Left" Height="325" Margin="503,292,0,0" VerticalAlignment="Top" Width="448">
+            <Label x:Name="PrintName1" Content="Print Name :" HorizontalAlignment="Left" Margin="49,27,0,0" VerticalAlignment="Top" Width="106"/>
+            <TextBox x:Name="txtPrintName1" HorizontalAlignment="Left" Height="23" Margin="133,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="261"/>
+
+            <ComboBox x:Name="PrintType1" HorizontalAlignment="Left" Margin="133,66,0,0" VerticalAlignment="Top" Width="261" IsEditable="False" >
+                <ComboBoxItem  x:Name="pvc1" Content="PVC"/>
+                <ComboBoxItem x:Name="pana1" Content="Pana"/>
+                <ComboBoxItem  x:Name="stiker1" Content="Stiker"/>
+            </ComboBox>
+            <Label x:Name="PrintTypesd1" Content="Print Type  :" HorizontalAlignment="Left" Margin="49,62,0,0" VerticalAlignment="Top" Width="84"/>
+
+            <Label x:Name="PrintHeight1" Content="Height:" HorizontalAlignment="Left" Margin="55,109,0,0" VerticalAlignment="Top" Width="65"/>
+            <TextBox x:Name="txtHight1" HorizontalAlignment="Left" Height="23" Margin="133,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="69"/>
+
+            <Label x:Name="PrintWide1" Content="Wide :" HorizontalAlignment="Left" Margin="229,108,0,0" VerticalAlignment="Top" Width="47"/>
+            <TextBox x:Name="txtWide1" HorizontalAlignment="Left" Height="24" Margin="296,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="76"/>
+
+            <Label x:Name="Sft1" Content="SFT :" HorizontalAlignment="Left" Margin="56,142,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="0.563,-0.788"/>
+            <TextBox x:Name="txtsft1" HorizontalAlignment="Left" Height="23" Margin="133,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143" RenderTransformOrigin="0.493,-1.413"/>
+
+            <Label x:Name="Rate1" Content="Rate :" HorizontalAlignment="Left" Margin="55,178,0,0" VerticalAlignment="Top" Width="65"/>
+            <TextBox x:Name="txtRate1" HorizontalAlignment="Left" Height="24" Margin="133,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
+
+            <Label x:Name="Quntity1" Content="Quantity :" HorizontalAlignment="Left" Margin="49,206,0,0" VerticalAlignment="Top" Width="106"/>
+            <TextBox x:Name="txtquntity1" HorizontalAlignment="Left" Height="22" Margin="133,208,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
+
+            <Label x:Name="TotalRate1" Content="Print Name :" HorizontalAlignment="Left" Margin="49,240,0,0" VerticalAlignment="Top" Width="78"/>
+            <TextBox x:Name="txtTotalRate1" HorizontalAlignment="Left" Height="23" Margin="133,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
+
+            <Label x:Name="Printstatus1" Content="Print Status :" HorizontalAlignment="Left" Margin="49,271,0,0" VerticalAlignment="Top" Width="106"/>
+
+            <ComboBox x:Name="PrintStatus1" HorizontalAlignment="Left" Margin="133,275,0,0" VerticalAlignment="Top" Width="261" IsEditable="False" >
+                <ComboBoxItem  x:Name="Ready1" Content="Ready"/>
+                <ComboBoxItem x:Name="Done1" Content="Done"/>
+                <ComboBoxItem  x:Name="DesignInProgress1" Content="Design In Progress"/>
+            </ComboBox>
+            <Label x:Name="dsvj1" Content="Print Work 2 :" HorizontalAlignment="Left" Margin="10,-3,0,0" VerticalAlignment="Top" Width="106"/>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="240" Margin="528,30,0,0" VerticalAlignment="Top" Width="423">
+            <Label x:Name="label1" Content="Oder summery" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="10,10,0,0" FontSize="14"/>
+            <Label x:Name="PrintName_Copy" Content="Print Name :" HorizontalAlignment="Left" Margin="12,44,0,0" VerticalAlignment="Top" Width="82"/>
+            <Label x:Name="PrintTypesd_Copy" Content="Print Type  :" HorizontalAlignment="Left" Margin="14,73,0,0" VerticalAlignment="Top" Width="76"/>
+            <Label x:Name="Sft_Copy" Content="SFT :" HorizontalAlignment="Left" Margin="14,102,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.563,-0.788"/>
+            <Label x:Name="Rate_Copy" Content="Rate :" HorizontalAlignment="Left" Margin="14,135,0,0" VerticalAlignment="Top" Width="58"/>
+            <Label x:Name="Quntity_Copy" Content="Quantity :" HorizontalAlignment="Left" Margin="12,166,0,0" VerticalAlignment="Top" Width="74"/>
+            <Label x:Name="TotalRate_Copy" Content="Total Rate :" HorizontalAlignment="Left" Margin="12,200,0,0" VerticalAlignment="Top" Width="74"/>
+            <Label x:Name="Printstatus_Copy" Content="Print Status :" HorizontalAlignment="Left" Margin="239,15,0,0" VerticalAlignment="Top" Width="79"/>
+
+
+            <TextBlock x:Name="ShowPrintType"  HorizontalAlignment="Left" Margin="95,73,0,0" VerticalAlignment="Top" Width="79" Height="26"/>
+            <TextBlock x:Name="ShowSFT"  HorizontalAlignment="Left" Margin="95,106,0,0" VerticalAlignment="Top" Width="79" Height="26"/>
+            <TextBlock x:Name="ShowRate"  HorizontalAlignment="Left" Margin="95,132,0,0" VerticalAlignment="Top" Width="79" Height="29"/>
+            <TextBlock x:Name="ShowQuan"  HorizontalAlignment="Left" Margin="90,168,0,0" VerticalAlignment="Top" Width="79" Height="24"/>
+            <TextBlock x:Name="ShowTotalRate"  HorizontalAlignment="Left" Margin="90,200,0,0" VerticalAlignment="Top" Width="79" Height="26"/>
+            <TextBlock x:Name="ShowPrintName"  HorizontalAlignment="Left" Margin="99,44,0,0" VerticalAlignment="Top" Width="79" Height="26"/>
+            <TextBlock x:Name="ShowPrintStatus"  HorizontalAlignment="Left" Margin="323,16,0,0" VerticalAlignment="Top" Width="90" Height="21"/>
+
+
+        </Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="240" Margin="503,30,0,0" VerticalAlignment="Top" Width="467"/>
+        <Button x:Name="Preview_Date" Content="Preview Date" HorizontalAlignment="Left" Margin="208,636,0,0" VerticalAlignment="Top" Width="138" Height="36" Click="Preview_Date_Click" />
+
+
+
+    </Grid>
+</Window>
