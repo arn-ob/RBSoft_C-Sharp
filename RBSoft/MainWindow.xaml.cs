@@ -30,10 +30,10 @@ namespace RBSoft
         {
             MainWindow main = new MainWindow();
             DataEntry.DataEntry de = new DataEntry.DataEntry();
-
+            Forms.frmWorkOder frm1 = new Forms.frmWorkOder();
             //main.Close();
             this.Hide();
-            de.Show();
+            frm1.Show();
 
         }
 

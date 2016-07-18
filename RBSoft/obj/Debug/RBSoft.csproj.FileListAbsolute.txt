@@ -42,3 +42,17 @@ C:\Users\Admin\Documents\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Debug\RBS
 M:\Git Project\RBSoft\RBSoft\bin\Debug\RBSoft.exe.config
 M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.exe
 M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.pdb
+M:\Git Project\RBSoft\RBSoft\bin\Debug\RBSoft.exe
+M:\Git Project\RBSoft\RBSoft\bin\Debug\RBSoft.pdb
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.csprojResolveAssemblyReference.cache
+M:\Git Project\RBSoft\RBSoft\obj\Debug\DataEntry\DataEntry.g.cs
+M:\Git Project\RBSoft\RBSoft\obj\Debug\MainWindow.g.cs
+M:\Git Project\RBSoft\RBSoft\obj\Debug\App.g.cs
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft_MarkupCompile.cache
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft_MarkupCompile.lref
+M:\Git Project\RBSoft\RBSoft\obj\Debug\DataEntry\DataEntry.baml
+M:\Git Project\RBSoft\RBSoft\obj\Debug\MainWindow.baml
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.g.resources
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Forms.frmWorkOder.resources
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Properties.Resources.resources
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.csproj.GenerateResource.Cache
