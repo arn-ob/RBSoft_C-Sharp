@@ -48,16 +48,30 @@
             this.txtSft = new System.Windows.Forms.TextBox();
             this.txtQnt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.StatusComBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.billNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.Media = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.size = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.qnt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.particular = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.samplePic = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samplePic)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -238,19 +252,19 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "Quantity :";
             // 
-            // comboBox1
+            // StatusComBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.StatusComBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusComBox.FormattingEnabled = true;
+            this.StatusComBox.Items.AddRange(new object[] {
             "Ready",
             "Not Ready ",
             "Working",
             "Design In Progress"});
-            this.comboBox1.Location = new System.Drawing.Point(135, 581);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(188, 28);
-            this.comboBox1.TabIndex = 17;
+            this.StatusComBox.Location = new System.Drawing.Point(135, 581);
+            this.StatusComBox.Name = "StatusComBox";
+            this.StatusComBox.Size = new System.Drawing.Size(188, 28);
+            this.StatusComBox.TabIndex = 17;
             // 
             // label10
             // 
@@ -275,13 +289,33 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.Name,
-            this.columnHeader2});
-            this.listView1.Location = new System.Drawing.Point(370, 191);
+            this.billNo,
+            this.name,
+            this.Media,
+            this.size,
+            this.qnt,
+            this.particular,
+            this.status});
+            this.listView1.Location = new System.Drawing.Point(370, 222);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(386, 299);
+            this.listView1.Size = new System.Drawing.Size(386, 203);
             this.listView1.TabIndex = 19;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "";
+            this.columnHeader1.Width = 0;
+            // 
+            // billNo
+            // 
+            this.billNo.Text = "Bill No";
+            // 
+            // name
+            // 
+            this.name.Text = "Name";
+            this.name.Width = 45;
             // 
             // label11
             // 
@@ -303,16 +337,120 @@
             this.label12.TabIndex = 21;
             this.label12.Text = "Show Date ";
             // 
+            // Media
+            // 
+            this.Media.Text = "Print Media";
+            // 
+            // size
+            // 
+            this.size.Text = "Size";
+            this.size.Width = 40;
+            // 
+            // qnt
+            // 
+            this.qnt.Text = "Quantity";
+            // 
+            // particular
+            // 
+            this.particular.Text = "Particular";
+            // 
+            // status
+            // 
+            this.status.Text = "Status";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(366, 196);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(112, 20);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Print Summary";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(370, 442);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(151, 20);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "Print Image Picture :";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(523, 440);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 27);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Browse";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // samplePic
+            // 
+            this.samplePic.Location = new System.Drawing.Point(370, 474);
+            this.samplePic.Name = "samplePic";
+            this.samplePic.Size = new System.Drawing.Size(386, 149);
+            this.samplePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.samplePic.TabIndex = 25;
+            this.samplePic.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(36, 640);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(77, 35);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "Go Back";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(277, 640);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(77, 35);
+            this.button3.TabIndex = 27;
+            this.button3.Text = "Add To Print";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(370, 640);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(77, 35);
+            this.button4.TabIndex = 28;
+            this.button4.Text = "Clear List";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(589, 640);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(138, 46);
+            this.button5.TabIndex = 29;
+            this.button5.Text = "Proceed To Print";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // frmWorkOder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 651);
+            this.ClientSize = new System.Drawing.Size(758, 698);
             this.ControlBox = false;
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.samplePic);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.StatusComBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtQnt);
@@ -338,6 +476,7 @@
             this.Text = "Work Oder";
             this.Load += new System.EventHandler(this.frmWorkOder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samplePic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,14 +503,27 @@
         private System.Windows.Forms.TextBox txtSft;
         private System.Windows.Forms.TextBox txtQnt;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox StatusComBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader Name;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader billNo;
+        private System.Windows.Forms.ColumnHeader name;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ColumnHeader Media;
+        private System.Windows.Forms.ColumnHeader size;
+        private System.Windows.Forms.ColumnHeader qnt;
+        private System.Windows.Forms.ColumnHeader particular;
+        private System.Windows.Forms.ColumnHeader status;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox samplePic;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

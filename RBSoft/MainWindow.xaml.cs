@@ -29,7 +29,7 @@ namespace RBSoft
         private void button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
-            DataEntry.DataEntry de = new DataEntry.DataEntry();
+           // DataEntry.DataEntry de = new DataEntry.DataEntry();
             Forms.frmWorkOder frm1 = new Forms.frmWorkOder();
             //main.Close();
             this.Hide();
