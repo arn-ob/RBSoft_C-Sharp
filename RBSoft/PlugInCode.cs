@@ -7,6 +7,8 @@ using System.Data.SqlClient;
 using System.Windows;
 using System.Data;
 using System.Security.Cryptography;
+using IniParser;
+using IniParser.Model;
 
 namespace RBSoft.Plugin
 {
@@ -21,30 +23,50 @@ namespace RBSoft.Plugin
     public partial class PlugInCode
     {
 
+        #region Create Connection To database 
         public class GetConnection
         {
 
 
-            public static string SrvName = @"localhost"; //Your SQL Server Name
-            public static string DbName = @"RBBD";//Your Database Name
-            public static string UsrName = "sa";//Your SQL Server User Name
-            public static string Pasword = "01746H3llow?arn";//Your SQL Server Password
+            //public static string SrvName = @"localhost"; //Your SQL Server Name
+            //public static string DbName = @"RBDatabase";//Your Database Name
+            //public static string UsrName = "sa";//Your SQL Server User Name
+            //public static string Pasword = "01746H3llow?arn";//Your SQL Server Password
+            public static string SrvName;
+            public static string DbName;
+            public static string UsrName;
+            public static string Pasword;
+
 
             /// <summary>
             /// Public static method to access connection string throw out the project 
             /// </summary>
             /// <returns>return database connection string</returns>
-            public static string GetConnectionString()
+            public static void GetConnectionString()
             {
-                 return "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
-                + UsrName + "; password=" + Pasword + ";Trusted_Connection=yes;";//Build Connection String and Return
+                FileIniDataParser fileIniData = new FileIniDataParser();
+                fileIniData.Parser.Configuration.CommentString = "#";
+                IniData parsedData = fileIniData.ReadFile("Connection.ini");
+                SrvName = parsedData["GeneralConnectionConfiguration"]["Server"].ToString();
+                DbName = parsedData["GeneralConnectionConfiguration"]["database"].ToString();
+                UsrName = parsedData["GeneralConnectionConfiguration"]["UserName"].ToString();
+                Pasword = parsedData["GeneralConnectionConfiguration"]["password"].ToString();
+
+                //return "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
+                //+ UsrName + "; password=" + Pasword + ";Trusted_Connection=yes;";//Build Connection String and Return
+            }
+            public static string ConnString()
+            {
+                return "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
+               + UsrName + "; password=" + Pasword + ";Trusted_Connection=yes;";//Build Connection String and Return
             }
 
-
          }
-
-    // All windows close program 
-    public static void CloseAllWindow()
+        #endregion
+        
+        #region program Navigate 
+        // All windows close program 
+        public static void CloseAllWindow()
         {
             MainWindow main = new MainWindow();
             DataEntry.DataEntry de = new DataEntry.DataEntry();
@@ -52,6 +74,10 @@ namespace RBSoft.Plugin
             de.Show();
             Application.Current.Shutdown(110);
         }
+        #endregion
+
+
+        #region Generate uniqe ID
 
         public static string GetUniqueKey(int maxSize)
         {
@@ -70,14 +96,14 @@ namespace RBSoft.Plugin
             return result.ToString();
         }
 
+        #endregion
 
-
-
-
-
+      
+               
+          
     }
 
 
-    
+
 }
     

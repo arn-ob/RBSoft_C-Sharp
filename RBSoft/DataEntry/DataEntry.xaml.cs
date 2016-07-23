@@ -31,7 +31,7 @@ namespace RBSoft.DataEntry
         //                                "Trusted_Connection=yes;" +
         //                                "database=RBDatabase;");
 
-        SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.GetConnectionString());
+        SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
 
 
         string SYSID = "Null";
@@ -52,9 +52,11 @@ namespace RBSoft.DataEntry
 
         public DataEntry()
         {
+            sql.Close();
             InitializeComponent();
             SYSID = getSysID();
             BillID = getBillID();
+            
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -97,7 +99,7 @@ namespace RBSoft.DataEntry
             string ManualBillNo = txtManualBillNO.Text;
 
             SqlCommand cmd = new SqlCommand();
-            sql.Open();
+            //sql.Open();
             // MessageBox.Show("StepDone");
             cmd.CommandText = "insert into dbo.tblPerson(SysID, BillNo, ManualBillNo,Name,PhoneNo,CAddress) values ('" + SYSID + "', '" + BillID + "', '" + ManualBillNo + "', '" + Name + "', '" + PhoneNo + "', '" + Add + "');";
 

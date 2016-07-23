@@ -17,6 +17,7 @@ namespace RBSoft.Forms
 
         string sysID = "Null";
         string BillNo = "Null";
+        
 
 
         #endregion //End of global Variable list
@@ -27,12 +28,11 @@ namespace RBSoft.Forms
         public frmWorkOder()
         {
             InitializeComponent();
-
+            BillNo = getBillID();
+            sysID = getSysID();
         }
 
         #endregion //...............................
-
-
         #region Generate a Unc Key For Store a Data
         /// <summary>
         /// Its Describe as a uniqe key so that data can store safely
@@ -62,9 +62,6 @@ namespace RBSoft.Forms
 
 
         #endregion Done Define
-
-
-
         #region Not Needed Function
         private void label4_Click(object sender, EventArgs e)
         {
@@ -97,6 +94,13 @@ namespace RBSoft.Forms
         }
         #endregion
 
+
+        #region ClearEveryThing Button 
+        /// <summary>
+        /// Here Reset all the button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClearEveryThing(object sender, EventArgs e)
         {
             txtName.Text = "";
@@ -107,5 +111,80 @@ namespace RBSoft.Forms
             txtSft.Text = "";
             txtWide.Text = "";
         }
+        #endregion
+
+
+        #region GoBack Button
+        /// <summary>
+        /// Button Go to the previwes Menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GoBack(object sender, EventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            //DataEntry.DataEntry de = new DataEntry.DataEntry();
+            Forms.frmWorkOder frm1 = new Forms.frmWorkOder();
+            this.Close();
+            this.Hide();
+            main.Show();
+            //de.Show();
+            //frm1.Show();
+        }
+        #endregion
+
+
+
+        #region AtToPrint Button
+        /// <summary>
+        /// Here Add multiple item to the listView 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AtToPrint(object sender, EventArgs e)
+        {
+            string printType = MediaComBox.Text;
+            string status = StatusComBox.Text;
+            
+            if (listView1.Items.Count == 0)
+            {
+
+                ListViewItem lst = new ListViewItem();
+                lst.SubItems.Add(BillNo.ToString());
+                lst.SubItems.Add(txtName.Text);
+                lst.SubItems.Add(printType.ToString());
+                lst.SubItems.Add(txtSft.Text);
+                lst.SubItems.Add(txtQnt.Text);
+                lst.SubItems.Add(status.ToString());
+
+                listView1.Items.Add(lst);
+                return;
+            }
+
+            //for (int j = 0; j <= listView1.Items.Count - 1; j++)
+            //{
+            //    if (listView1.Items[j].SubItems[1].Text == textBox1.Text)
+            //    {
+            //        listView1.Items[j].SubItems[1].Text = textBox1.Text;
+            //        listView1.Items[j].SubItems[2].Text = textBox2.Text;
+            //        return;
+
+            //    }
+            //}
+
+            ListViewItem lst1 = new ListViewItem();
+
+            lst1.SubItems.Add(BillNo.ToString());
+            lst1.SubItems.Add(txtName.Text);
+            lst1.SubItems.Add(printType.ToString());
+            lst1.SubItems.Add(txtSft.Text);
+            lst1.SubItems.Add(txtQnt.Text);
+            lst1.SubItems.Add(status.ToString());
+
+            listView1.Items.Add(lst1);
+            return;
+
+        }
+        #endregion
     }
 }

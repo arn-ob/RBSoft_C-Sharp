@@ -69,3 +69,6 @@ M:\Git Project\RBSoft\RBSoft\bin\Debug\System.Xaml.dll
 M:\Git Project\RBSoft\RBSoft\bin\Debug\System.Xml.dll
 M:\Git Project\RBSoft\RBSoft\bin\Debug\System.Xml.Linq.dll
 M:\Git Project\RBSoft\RBSoft\bin\Debug\WindowsBase.dll
+M:\Git Project\RBSoft\RBSoft\bin\Debug\INIFileParser.dll
+M:\Git Project\RBSoft\RBSoft\bin\Debug\INIFileParser.xml
+M:\Git Project\RBSoft\RBSoft\bin\Debug\Connection.ini

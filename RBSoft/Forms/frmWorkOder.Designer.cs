@@ -58,7 +58,6 @@
             this.Media = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.size = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.qnt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.particular = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label11 = new System.Windows.Forms.Label();
             this.DataShow = new System.Windows.Forms.Label();
@@ -295,7 +294,6 @@
             this.Media,
             this.size,
             this.qnt,
-            this.particular,
             this.status});
             this.listView1.Location = new System.Drawing.Point(370, 222);
             this.listView1.Name = "listView1";
@@ -331,10 +329,6 @@
             // qnt
             // 
             this.qnt.Text = "Quantity";
-            // 
-            // particular
-            // 
-            this.particular.Text = "Particular";
             // 
             // status
             // 
@@ -406,6 +400,7 @@
             this.button2.TabIndex = 26;
             this.button2.Text = "Go Back";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.GoBack);
             // 
             // button3
             // 
@@ -415,6 +410,7 @@
             this.button3.TabIndex = 27;
             this.button3.Text = "Add To Print";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.AtToPrint);
             // 
             // button4
             // 
@@ -528,7 +524,6 @@
         private System.Windows.Forms.ColumnHeader Media;
         private System.Windows.Forms.ColumnHeader size;
         private System.Windows.Forms.ColumnHeader qnt;
-        private System.Windows.Forms.ColumnHeader particular;
         private System.Windows.Forms.ColumnHeader status;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
