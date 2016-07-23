@@ -30,12 +30,12 @@ namespace RBSoft.Plugin
 
             //public static string SrvName = @"localhost"; //Your SQL Server Name
             //public static string DbName = @"RBDatabase";//Your Database Name
-            //public static string UsrName = "sa";//Your SQL Server User Name
-            //public static string Pasword = "01746H3llow?arn";//Your SQL Server Password
-            public static string SrvName;
-            public static string DbName;
-            public static string UsrName;
-            public static string Pasword;
+            public static string UsrName = "sa";//Your SQL Server User Name
+            public static string Pasword = "01746H3llow?arn";//Your SQL Server Password
+            private static string SrvName;
+            private static string DbName;
+            //private static string UsrName;
+            //private static string Pasword;
 
 
             /// <summary>
@@ -47,10 +47,10 @@ namespace RBSoft.Plugin
                 FileIniDataParser fileIniData = new FileIniDataParser();
                 fileIniData.Parser.Configuration.CommentString = "#";
                 IniData parsedData = fileIniData.ReadFile("Connection.ini");
-                SrvName = parsedData["GeneralConnectionConfiguration"]["Server"].ToString();
-                DbName = parsedData["GeneralConnectionConfiguration"]["database"].ToString();
-                UsrName = parsedData["GeneralConnectionConfiguration"]["UserName"].ToString();
-                Pasword = parsedData["GeneralConnectionConfiguration"]["password"].ToString();
+                SrvName = parsedData["GeneralConnectionConfiguration"]["Server"];
+                DbName = parsedData["GeneralConnectionConfiguration"]["Database"].ToString();  ///Problem not solve 
+                //UsrName = parsedData["GeneralConnectionConfiguration"]["UserName"];
+                //Pasword = parsedData["GeneralConnectionConfiguration"]["password"];
 
                 //return "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
                 //+ UsrName + "; password=" + Pasword + ";Trusted_Connection=yes;";//Build Connection String and Return
