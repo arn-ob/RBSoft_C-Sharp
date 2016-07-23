@@ -45,3 +45,33 @@ M:\Source Code\RBSoft\Visual Studio 2015 Pabna Work Before Eid\Visual Studio 201
 M:\Source Code\RBSoft\Visual Studio 2015 Pabna Work Before Eid\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Release\RBSoft.g.resources
 M:\Source Code\RBSoft\Visual Studio 2015 Pabna Work Before Eid\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Release\RBSoft.Properties.Resources.resources
 M:\Source Code\RBSoft\Visual Studio 2015 Pabna Work Before Eid\Visual Studio 2015\Projects\RBSoft\RBSoft\obj\Release\RBSoft.csproj.GenerateResource.Cache
+M:\Git Project\RBSoft\RBSoft\bin\Release\RBSoft.exe.config
+M:\Git Project\RBSoft\RBSoft\obj\Release\RBSoft.exe
+M:\Git Project\RBSoft\RBSoft\obj\Release\RBSoft.pdb
+M:\Git Project\RBSoft\RBSoft\bin\Release\RBSoft.exe
+M:\Git Project\RBSoft\RBSoft\bin\Release\RBSoft.pdb
+M:\Git Project\RBSoft\RBSoft\bin\Release\Microsoft.CSharp.dll
+M:\Git Project\RBSoft\RBSoft\bin\Release\PresentationCore.dll
+M:\Git Project\RBSoft\RBSoft\bin\Release\PresentationFramework.dll
+M:\Git Project\RBSoft\RBSoft\bin\Release\System.Data.DataSetExtensions.dll
+M:\Git Project\RBSoft\RBSoft\bin\Release\System.Data.dll
+M:\Git Project\RBSoft\RBSoft\bin\Release\System.dll
+M:\Git Project\RBSoft\RBSoft\bin\Release\System.Drawing.dll
+M:\Git Project\RBSoft\RBSoft\bin\Release\System.Net.Http.dll
+M:\Git Project\RBSoft\RBSoft\bin\Release\System.Windows.Forms.dll
+M:\Git Project\RBSoft\RBSoft\bin\Release\System.Xaml.dll
+M:\Git Project\RBSoft\RBSoft\bin\Release\System.Xml.dll
+M:\Git Project\RBSoft\RBSoft\bin\Release\System.Xml.Linq.dll
+M:\Git Project\RBSoft\RBSoft\bin\Release\WindowsBase.dll
+M:\Git Project\RBSoft\RBSoft\obj\Release\RBSoft.csprojResolveAssemblyReference.cache
+M:\Git Project\RBSoft\RBSoft\obj\Release\DataEntry\DataEntry.g.cs
+M:\Git Project\RBSoft\RBSoft\obj\Release\MainWindow.g.cs
+M:\Git Project\RBSoft\RBSoft\obj\Release\App.g.cs
+M:\Git Project\RBSoft\RBSoft\obj\Release\RBSoft_MarkupCompile.cache
+M:\Git Project\RBSoft\RBSoft\obj\Release\RBSoft_MarkupCompile.lref
+M:\Git Project\RBSoft\RBSoft\obj\Release\DataEntry\DataEntry.baml
+M:\Git Project\RBSoft\RBSoft\obj\Release\MainWindow.baml
+M:\Git Project\RBSoft\RBSoft\obj\Release\RBSoft.g.resources
+M:\Git Project\RBSoft\RBSoft\obj\Release\RBSoft.Forms.frmWorkOder.resources
+M:\Git Project\RBSoft\RBSoft\obj\Release\RBSoft.Properties.Resources.resources
+M:\Git Project\RBSoft\RBSoft\obj\Release\RBSoft.csproj.GenerateResource.Cache

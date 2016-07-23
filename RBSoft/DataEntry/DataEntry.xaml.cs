@@ -25,23 +25,27 @@ namespace RBSoft.DataEntry
     /// </summary>
     public partial class DataEntry : Window
     {
-        
-        SqlConnection sql = new SqlConnection("user id=sa;" +
-                                        "password=Rb?Admin;server=localhost;" +
-                                        "Trusted_Connection=yes;" +
-                                        "database=RBDatabase;");
+
+        //SqlConnection sql = new SqlConnection("user id=sa;" +
+        //                                "password=Rb?Admin;server=localhost;" +
+        //                                "Trusted_Connection=yes;" +
+        //                                "database=RBDatabase;");
+
+        SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.GetConnectionString());
+
+
         string SYSID = "Null";
         string BillID = "Null";
         //string TodayDay = DateTime.Now.Day.ToString();
         //string Todaymonth = DateTime.Now.Month.ToString();
         public static string getSysID()
         { 
-            string sysID = "SYSID-" + PlugInCode.GetUniqueKey(3) + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString();
+            string sysID = "SYSID-" + PlugInCode.GetUniqueKey(3) + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString()+ DateTime.Now.Second.ToString();
             return sysID;
         }
         public static string getBillID()
         {
-            string BillNo = "Bill-" + PlugInCode.GetUniqueKey(3) + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString();
+            string BillNo = "Bill-" + PlugInCode.GetUniqueKey(3) + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Second.ToString();
             return BillNo;
         }
 

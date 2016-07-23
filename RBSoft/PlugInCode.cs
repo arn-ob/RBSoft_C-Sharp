@@ -10,11 +10,41 @@ using System.Security.Cryptography;
 
 namespace RBSoft.Plugin
 {
+
+    /// <summary>
+    /// Connection Information And the connection details return to the connection Call
+    /// </summary>
+    /// <returns></returns>
+    
+
+
     public partial class PlugInCode
     {
-       
-        // All windows close program 
-        public static void CloseAllWindow()
+
+        public class GetConnection
+        {
+
+
+            public static string SrvName = @"localhost"; //Your SQL Server Name
+            public static string DbName = @"RBBD";//Your Database Name
+            public static string UsrName = "sa";//Your SQL Server User Name
+            public static string Pasword = "01746H3llow?arn";//Your SQL Server Password
+
+            /// <summary>
+            /// Public static method to access connection string throw out the project 
+            /// </summary>
+            /// <returns>return database connection string</returns>
+            public static string GetConnectionString()
+            {
+                 return "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
+                + UsrName + "; password=" + Pasword + ";Trusted_Connection=yes;";//Build Connection String and Return
+            }
+
+
+         }
+
+    // All windows close program 
+    public static void CloseAllWindow()
         {
             MainWindow main = new MainWindow();
             DataEntry.DataEntry de = new DataEntry.DataEntry();
@@ -46,5 +76,8 @@ namespace RBSoft.Plugin
 
 
     }
+
+
+    
 }
     

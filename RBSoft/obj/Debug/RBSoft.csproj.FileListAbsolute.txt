@@ -56,3 +56,16 @@ M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.g.resources
 M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Forms.frmWorkOder.resources
 M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Properties.Resources.resources
 M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.csproj.GenerateResource.Cache
+M:\Git Project\RBSoft\RBSoft\bin\Debug\Microsoft.CSharp.dll
+M:\Git Project\RBSoft\RBSoft\bin\Debug\PresentationCore.dll
+M:\Git Project\RBSoft\RBSoft\bin\Debug\PresentationFramework.dll
+M:\Git Project\RBSoft\RBSoft\bin\Debug\System.Data.DataSetExtensions.dll
+M:\Git Project\RBSoft\RBSoft\bin\Debug\System.Data.dll
+M:\Git Project\RBSoft\RBSoft\bin\Debug\System.dll
+M:\Git Project\RBSoft\RBSoft\bin\Debug\System.Drawing.dll
+M:\Git Project\RBSoft\RBSoft\bin\Debug\System.Net.Http.dll
+M:\Git Project\RBSoft\RBSoft\bin\Debug\System.Windows.Forms.dll
+M:\Git Project\RBSoft\RBSoft\bin\Debug\System.Xaml.dll
+M:\Git Project\RBSoft\RBSoft\bin\Debug\System.Xml.dll
+M:\Git Project\RBSoft\RBSoft\bin\Debug\System.Xml.Linq.dll
+M:\Git Project\RBSoft\RBSoft\bin\Debug\WindowsBase.dll
