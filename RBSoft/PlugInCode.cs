@@ -29,13 +29,13 @@ namespace RBSoft.Plugin
 
 
             //public static string SrvName = @"localhost"; //Your SQL Server Name
-            //public static string DbName = @"RBDatabase";//Your Database Name
-            public static string UsrName = "sa";//Your SQL Server User Name
-            public static string Pasword = "01746H3llow?arn";//Your SQL Server Password
+            public static string DbName = @"RBBD";//Your Database Name
+           // public static string UsrName = "sa";//Your SQL Server User Name
+            //public static string Pasword = "01746H3llow?arn";//Your SQL Server Password
             private static string SrvName;
-            private static string DbName;
-            //private static string UsrName;
-            //private static string Pasword;
+            //private static string DbName;
+            private static string UsrName;
+            private static string Pasword;
 
 
             /// <summary>
@@ -48,9 +48,9 @@ namespace RBSoft.Plugin
                 fileIniData.Parser.Configuration.CommentString = "#";
                 IniData parsedData = fileIniData.ReadFile("Connection.ini");
                 SrvName = parsedData["GeneralConnectionConfiguration"]["Server"];
-                DbName = parsedData["GeneralConnectionConfiguration"]["Database"].ToString();  ///Problem not solve 
-                //UsrName = parsedData["GeneralConnectionConfiguration"]["UserName"];
-                //Pasword = parsedData["GeneralConnectionConfiguration"]["password"];
+               // DbName = parsedData["GeneralConnectionConfiguration"]["Database"].ToString();  ///Cant connected to the DB ... Problem not solve 
+                UsrName = parsedData["GeneralConnectionConfiguration"]["UserName"];
+                Pasword = parsedData["GeneralConnectionConfiguration"]["password"];
 
                 //return "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
                 //+ UsrName + "; password=" + Pasword + ";Trusted_Connection=yes;";//Build Connection String and Return
@@ -99,7 +99,21 @@ namespace RBSoft.Plugin
         #endregion
 
       
-               
+         public class Calculation
+        {
+            public static string multi(string val_1 , string val_2)
+            {
+                string hight = val_1;
+                string wide = val_2;
+                int valOfHight, valOfWide, sft;
+
+                int.TryParse(hight, out valOfHight);
+                int.TryParse(wide, out valOfWide);
+                sft = valOfWide * valOfHight;
+                return sft.ToString();
+               // txtsft.Text = sft.ToString();
+            }
+        }
           
     }
 

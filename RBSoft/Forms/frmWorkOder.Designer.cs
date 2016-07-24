@@ -55,23 +55,28 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.billNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Media = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.size = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Mediatype = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sft = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.qnt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label11 = new System.Windows.Forms.Label();
-            this.DataShow = new System.Windows.Forms.Label();
+            this.DateShows = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.BrowseImage = new System.Windows.Forms.Button();
-            this.samplePic = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.ProceedToPrint = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtFileName = new System.Windows.Forms.TextBox();
+            this.hight = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.wide = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.subbill = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.fileName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.times = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dates = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.samplePic)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -162,7 +167,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 425);
+            this.label5.Location = new System.Drawing.Point(27, 418);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 20);
             this.label5.TabIndex = 9;
@@ -176,7 +181,7 @@
             "Pana",
             "Stiker",
             "Other"});
-            this.MediaComBox.Location = new System.Drawing.Point(97, 424);
+            this.MediaComBox.Location = new System.Drawing.Point(97, 417);
             this.MediaComBox.Name = "MediaComBox";
             this.MediaComBox.Size = new System.Drawing.Size(180, 21);
             this.MediaComBox.TabIndex = 11;
@@ -185,7 +190,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(27, 468);
+            this.label6.Location = new System.Drawing.Point(27, 463);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 20);
             this.label6.TabIndex = 13;
@@ -193,14 +198,14 @@
             // 
             // txtHight
             // 
-            this.txtHight.Location = new System.Drawing.Point(95, 468);
+            this.txtHight.Location = new System.Drawing.Point(95, 463);
             this.txtHight.Name = "txtHight";
             this.txtHight.Size = new System.Drawing.Size(77, 20);
             this.txtHight.TabIndex = 12;
             // 
             // txtWide
             // 
-            this.txtWide.Location = new System.Drawing.Point(241, 470);
+            this.txtWide.Location = new System.Drawing.Point(244, 465);
             this.txtWide.Name = "txtWide";
             this.txtWide.Size = new System.Drawing.Size(77, 20);
             this.txtWide.TabIndex = 12;
@@ -210,7 +215,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(185, 470);
+            this.label8.Location = new System.Drawing.Point(191, 465);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 20);
             this.label8.TabIndex = 13;
@@ -221,7 +226,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(193, 515);
+            this.label7.Location = new System.Drawing.Point(193, 508);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 20);
             this.label7.TabIndex = 15;
@@ -229,15 +234,16 @@
             // 
             // txtSft
             // 
-            this.txtSft.Location = new System.Drawing.Point(246, 516);
+            this.txtSft.Location = new System.Drawing.Point(246, 509);
             this.txtSft.Name = "txtSft";
             this.txtSft.Size = new System.Drawing.Size(77, 20);
             this.txtSft.TabIndex = 14;
             this.txtSft.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.txtSft.MouseEnter += new System.EventHandler(this.txtSft_MouseEnter);
             // 
             // txtQnt
             // 
-            this.txtQnt.Location = new System.Drawing.Point(105, 515);
+            this.txtQnt.Location = new System.Drawing.Point(105, 508);
             this.txtQnt.Name = "txtQnt";
             this.txtQnt.Size = new System.Drawing.Size(77, 20);
             this.txtQnt.TabIndex = 14;
@@ -246,7 +252,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(25, 513);
+            this.label9.Location = new System.Drawing.Point(25, 506);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 20);
             this.label9.TabIndex = 15;
@@ -261,7 +267,7 @@
             "Not Ready ",
             "Working",
             "Design In Progress"});
-            this.StatusComBox.Location = new System.Drawing.Point(135, 581);
+            this.StatusComBox.Location = new System.Drawing.Point(135, 588);
             this.StatusComBox.Name = "StatusComBox";
             this.StatusComBox.Size = new System.Drawing.Size(188, 28);
             this.StatusComBox.TabIndex = 17;
@@ -270,7 +276,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(31, 579);
+            this.label10.Location = new System.Drawing.Point(31, 586);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 29);
             this.label10.TabIndex = 16;
@@ -278,6 +284,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.txtFileName);
             this.groupBox1.Location = new System.Drawing.Point(22, 385);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(332, 238);
@@ -290,14 +298,20 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.billNo,
+            this.subbill,
+            this.Mediatype,
             this.name,
-            this.Media,
-            this.size,
+            this.hight,
+            this.wide,
             this.qnt,
-            this.status});
+            this.sft,
+            this.fileName,
+            this.status,
+            this.dates,
+            this.times});
             this.listView1.Location = new System.Drawing.Point(370, 222);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(435, 203);
+            this.listView1.Size = new System.Drawing.Size(435, 401);
             this.listView1.TabIndex = 19;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -310,28 +324,31 @@
             // billNo
             // 
             this.billNo.Text = "Bill No";
-            this.billNo.Width = 80;
             // 
             // name
             // 
+            this.name.DisplayIndex = 2;
             this.name.Text = "Name";
             // 
-            // Media
+            // Mediatype
             // 
-            this.Media.Text = "Print Media";
-            this.Media.Width = 70;
+            this.Mediatype.Text = "Print Media";
+            this.Mediatype.Width = 70;
             // 
-            // size
+            // sft
             // 
-            this.size.Text = "Size";
-            this.size.Width = 40;
+            this.sft.DisplayIndex = 4;
+            this.sft.Text = "SFT";
+            this.sft.Width = 40;
             // 
             // qnt
             // 
+            this.qnt.DisplayIndex = 5;
             this.qnt.Text = "Quantity";
             // 
             // status
             // 
+            this.status.DisplayIndex = 6;
             this.status.Text = "Status";
             // 
             // label11
@@ -344,15 +361,15 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "Date :";
             // 
-            // DataShow
+            // DateShows
             // 
-            this.DataShow.AutoSize = true;
-            this.DataShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DataShow.Location = new System.Drawing.Point(542, 143);
-            this.DataShow.Name = "DataShow";
-            this.DataShow.Size = new System.Drawing.Size(92, 20);
-            this.DataShow.TabIndex = 21;
-            this.DataShow.Text = "Show Date ";
+            this.DateShows.AutoSize = true;
+            this.DateShows.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateShows.Location = new System.Drawing.Point(535, 145);
+            this.DateShows.Name = "DateShows";
+            this.DateShows.Size = new System.Drawing.Size(92, 20);
+            this.DateShows.TabIndex = 21;
+            this.DateShows.Text = "Show Date ";
             // 
             // label13
             // 
@@ -363,34 +380,6 @@
             this.label13.Size = new System.Drawing.Size(112, 20);
             this.label13.TabIndex = 22;
             this.label13.Text = "Print Summary";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(370, 442);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(151, 20);
-            this.label14.TabIndex = 23;
-            this.label14.Text = "Print Image Picture :";
-            // 
-            // BrowseImage
-            // 
-            this.BrowseImage.Location = new System.Drawing.Point(523, 440);
-            this.BrowseImage.Name = "BrowseImage";
-            this.BrowseImage.Size = new System.Drawing.Size(71, 27);
-            this.BrowseImage.TabIndex = 24;
-            this.BrowseImage.Text = "Browse";
-            this.BrowseImage.UseVisualStyleBackColor = true;
-            // 
-            // samplePic
-            // 
-            this.samplePic.Location = new System.Drawing.Point(370, 474);
-            this.samplePic.Name = "samplePic";
-            this.samplePic.Size = new System.Drawing.Size(435, 149);
-            this.samplePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.samplePic.TabIndex = 25;
-            this.samplePic.TabStop = false;
             // 
             // button2
             // 
@@ -420,6 +409,7 @@
             this.button4.TabIndex = 28;
             this.button4.Text = "Clear Print List";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.ClearPrintList);
             // 
             // ProceedToPrint
             // 
@@ -430,6 +420,7 @@
             this.ProceedToPrint.TabIndex = 29;
             this.ProceedToPrint.Text = "Proceed To Print";
             this.ProceedToPrint.UseVisualStyleBackColor = true;
+            this.ProceedToPrint.Click += new System.EventHandler(this.StoreToDB);
             // 
             // button1
             // 
@@ -440,6 +431,55 @@
             this.button1.Text = "Clear Everything";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.ClearEveryThing);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(3, 164);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(116, 20);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "Print File Name";
+            // 
+            // txtFileName
+            // 
+            this.txtFileName.Location = new System.Drawing.Point(125, 166);
+            this.txtFileName.Name = "txtFileName";
+            this.txtFileName.Size = new System.Drawing.Size(176, 20);
+            this.txtFileName.TabIndex = 16;
+            // 
+            // hight
+            // 
+            this.hight.DisplayIndex = 7;
+            this.hight.Width = 0;
+            // 
+            // wide
+            // 
+            this.wide.DisplayIndex = 8;
+            this.wide.Width = 0;
+            // 
+            // subbill
+            // 
+            this.subbill.DisplayIndex = 9;
+            this.subbill.Text = "SubBillNo";
+            this.subbill.Width = 30;
+            // 
+            // fileName
+            // 
+            this.fileName.DisplayIndex = 10;
+            this.fileName.Text = "FIleName";
+            this.fileName.Width = 70;
+            // 
+            // times
+            // 
+            this.times.DisplayIndex = 11;
+            this.times.Width = 0;
+            // 
+            // dates
+            // 
+            this.dates.DisplayIndex = 12;
+            this.dates.Width = 0;
             // 
             // frmWorkOder
             // 
@@ -452,11 +492,8 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.samplePic);
-            this.Controls.Add(this.BrowseImage);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.DataShow);
+            this.Controls.Add(this.DateShows);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.StatusComBox);
@@ -485,7 +522,8 @@
             this.Text = "Work Oder";
             this.Load += new System.EventHandler(this.frmWorkOder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.samplePic)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,19 +558,24 @@
         private System.Windows.Forms.ColumnHeader billNo;
         private System.Windows.Forms.ColumnHeader name;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label DataShow;
-        private System.Windows.Forms.ColumnHeader Media;
-        private System.Windows.Forms.ColumnHeader size;
+        private System.Windows.Forms.Label DateShows;
+        private System.Windows.Forms.ColumnHeader Mediatype;
+        private System.Windows.Forms.ColumnHeader sft;
         private System.Windows.Forms.ColumnHeader qnt;
         private System.Windows.Forms.ColumnHeader status;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button BrowseImage;
-        private System.Windows.Forms.PictureBox samplePic;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button ProceedToPrint;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtFileName;
+        private System.Windows.Forms.ColumnHeader hight;
+        private System.Windows.Forms.ColumnHeader wide;
+        private System.Windows.Forms.ColumnHeader subbill;
+        private System.Windows.Forms.ColumnHeader fileName;
+        private System.Windows.Forms.ColumnHeader dates;
+        private System.Windows.Forms.ColumnHeader times;
     }
 }
