@@ -70,8 +70,11 @@ namespace RBSoft.Plugin
         {
             MainWindow main = new MainWindow();
             DataEntry.DataEntry de = new DataEntry.DataEntry();
+            Forms.frmWorkOder WorkOder = new Forms.frmWorkOder();
+
+            WorkOder.Close();
             main.Close();
-            de.Show();
+            de.Close();
             Application.Current.Shutdown(110);
         }
         #endregion

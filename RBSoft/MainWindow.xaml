@@ -10,11 +10,6 @@
         Width="1000" Height="700"
         Title="MainWindow" >
     <Grid>
-        <Label x:Name="label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="167" Width="980">
-            <Label.Background>
-                <ImageBrush ImageSource="Picture/Revolution BD.jpg"/>
-            </Label.Background>
-        </Label>
         <Grid x:Name="AllBtn" HorizontalAlignment="Left" Margin="10,269,0,0" VerticalAlignment="Top" Height="349" Width="980" Panel.ZIndex="-2">
             <Button x:Name="BtnEntryData" Content="Work Oder" Width="238" RenderTransformOrigin="1.15,2.4" Height="127" FontSize="21.333" Background="#FFC3C3C3" Click="button_Click" Margin="10,10,732,212"/>
             <Button x:Name="BtnSearchData" Content="Search Data" RenderTransformOrigin="1.15,2.4" Height="127" FontSize="21.333" Background="#FFC3C3C3" Margin="259,10,493,212"/>
@@ -31,6 +26,9 @@
         <Button x:Name="BtnChat" Content="Chat" RenderTransformOrigin="1.15,2.4" Background="#FFDDDDDD" Margin="777,644,144,30" Width="79" Height="26" IsEnabled="False"/>
 
         <Button x:Name="button" Content="Exit" HorizontalAlignment="Left" Margin="877,644,0,0" VerticalAlignment="Top" Width="79" Height="26" Click="button_Click_1"/>
+        <TextBlock x:Name="SqlStatus"  HorizontalAlignment="Left" Height="22" Margin="858,188,0,0" VerticalAlignment="Top" Width="100" Text="Disconnected"/>
+        <Label x:Name="status" Content="Database Connection Status :" HorizontalAlignment="Left" Height="26" Margin="690,182,0,0" VerticalAlignment="Top" Width="170"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="167" Margin="10,10,0,0" VerticalAlignment="Top" Width="980" Source="Picture/Revolution BD.png"/>
 
 
     </Grid>

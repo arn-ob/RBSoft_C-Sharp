@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RBSoft;
+using System.Data.SqlClient;
+using RBSoft.Plugin;
 
 namespace RBSoft
 {
@@ -24,6 +26,8 @@ namespace RBSoft
         public MainWindow()
         {
             InitializeComponent();
+           checkConnection();
+
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -38,6 +42,25 @@ namespace RBSoft
 
         }
 
+        public void checkConnection()
+        {
+            SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
+            sql.Close();
+            try
+            {
+                sql.Open();
+                if (sql.State == System.Data.ConnectionState.Open)
+                {
+                    SqlStatus.Text = "Connected";
+                    sql.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Database Was Not Connected, Try To ReConnected");
+            }
+
+        }
         private void button_Click_1(object sender, RoutedEventArgs e)
         {
             RBSoft.Plugin.PlugInCode.CloseAllWindow();

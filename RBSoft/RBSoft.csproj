@@ -168,9 +168,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Picture\Revolution BD.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
@@ -183,17 +180,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Picture\Button-Back-1-512.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Picture\BackButton.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="AccountHistory\" />
     <Folder Include="BtnOption\" />
     <Folder Include="ClientNameSearch\" />
     <Folder Include="EmployeeLog\" />
     <Folder Include="SearchData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\BackButton.png" />
+    <Resource Include="Picture\Button-Back-1-512.png" />
+    <Resource Include="Picture\Revolution BD.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
