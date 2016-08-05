@@ -26,7 +26,16 @@ namespace RBSoft
         public MainWindow()
         {
             InitializeComponent();
-           checkConnection();
+            checkConnection();
+
+
+
+            BtnAccountHistory.IsEnabled = false;
+            BtnClientNameSearch.IsEnabled = false;
+            BtnEmployeeLog.IsEnabled = false;
+            BtnPrintWork.IsEnabled = false;
+            BtnEmplyeeInfo.IsEnabled = false;
+            BtnEditAccount.IsEnabled = false;
 
         }
 
@@ -35,9 +44,10 @@ namespace RBSoft
             MainWindow main = new MainWindow();
             //DataEntry.DataEntry de = new DataEntry.DataEntry();
             Forms.frmWorkOder frm1 = new Forms.frmWorkOder();
+
+
             main.Close();
             this.Hide();
-            //de.Show();
             frm1.Show();
 
         }
@@ -64,6 +74,17 @@ namespace RBSoft
         private void button_Click_1(object sender, RoutedEventArgs e)
         {
             RBSoft.Plugin.PlugInCode.CloseAllWindow();
+        }
+
+        private void SearchDatabtnClick(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+           
+            Forms.frmSearchData frm1 = new Forms.frmSearchData();
+            
+            main.Close();
+            this.Hide();
+            frm1.Show();
         }
     }
 }

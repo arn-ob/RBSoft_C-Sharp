@@ -12,7 +12,7 @@
     <Grid>
         <Grid x:Name="AllBtn" HorizontalAlignment="Left" Margin="10,269,0,0" VerticalAlignment="Top" Height="349" Width="980" Panel.ZIndex="-2">
             <Button x:Name="BtnEntryData" Content="Work Oder" Width="238" RenderTransformOrigin="1.15,2.4" Height="127" FontSize="21.333" Background="#FFC3C3C3" Click="button_Click" Margin="10,10,732,212"/>
-            <Button x:Name="BtnSearchData" Content="Search Data" RenderTransformOrigin="1.15,2.4" Height="127" FontSize="21.333" Background="#FFC3C3C3" Margin="259,10,493,212"/>
+            <Button x:Name="BtnSearchData" Content="Search Data" RenderTransformOrigin="1.15,2.4" Height="127" FontSize="21.333" Background="#FFC3C3C3" Margin="259,10,493,212" Click="SearchDatabtnClick"/>
             <Button x:Name="BtnAccountHistory" Content="Account History" RenderTransformOrigin="1.15,2.4" Height="127" FontSize="21.333" Background="#FFC3C3C3" Margin="498,10,265,212"/>
             <Button x:Name="BtnClientNameSearch" Content="Client Name Search" RenderTransformOrigin="1.15,2.4" Height="127" FontSize="21.333" Background="#FFC3C3C3" Margin="732,10,18,212"/>
             <Button x:Name="BtnEmployeeLog" Content="Employee Log" RenderTransformOrigin="1.15,2.4" Height="127" FontSize="21.333" Background="#FFC3C3C3" Margin="10,160,732,62"/>
@@ -29,6 +29,7 @@
         <TextBlock x:Name="SqlStatus"  HorizontalAlignment="Left" Height="22" Margin="858,188,0,0" VerticalAlignment="Top" Width="100" Text="Disconnected"/>
         <Label x:Name="status" Content="Database Connection Status :" HorizontalAlignment="Left" Height="26" Margin="690,182,0,0" VerticalAlignment="Top" Width="170"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="167" Margin="10,10,0,0" VerticalAlignment="Top" Width="980" Source="Picture/Revolution BD.png"/>
+        <Label x:Name="status_Copy" Content="Under Development , Not For USE" HorizontalAlignment="Left" Height="26" Margin="28,644,0,0" VerticalAlignment="Top" Width="234"/>
 
 
     </Grid>
