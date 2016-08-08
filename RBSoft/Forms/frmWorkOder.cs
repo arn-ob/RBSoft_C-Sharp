@@ -17,6 +17,9 @@ namespace RBSoft.Forms
     {
         #region Global Variable 
 
+
+        string TempFileName;
+        byte[] StoreTempImage;
         string sysID = "Null";
         string BillNo = "Null";
         string SubBillNo = "Null";
@@ -286,7 +289,7 @@ namespace RBSoft.Forms
                         SqlCommand PrintDetailsQuery = new SqlCommand();
 
 
-                        PrintDetailsQuery.CommandText = "INSERT INTO dbo.tblPrintDetails(BillNo,SubBillNo,MediaType,Hight,Wide,Qunty,Sft,Filenames,PrintStatus,PrintDate,PrintTime) VALUES (@BillNo, @SubBillNo, @MediaType, @Hight, @Wide, @Qunty, @Sft, @Filenames, @PrintStatus, @PrintDate, @PrintTime)";
+                        PrintDetailsQuery.CommandText = "INSERT INTO dbo.tblPrintDetails(BillNo,SubBillNo,MediaType,Hight,Wide,Qunty,Sft,Filenames,PrintStatus,PrintDate,PrintTime,PrintImage) VALUES (@BillNo, @SubBillNo, @MediaType, @Hight, @Wide, @Qunty, @Sft, @Filenames, @PrintStatus, @PrintDate, @PrintTime,@image)";
 
                         PrintDetailsQuery.CommandType = CommandType.Text;
                         PrintDetailsQuery.Connection = sql;
@@ -303,8 +306,9 @@ namespace RBSoft.Forms
                         PrintDetailsQuery.Parameters.AddWithValue("PrintStatus", listView1.Items[i].SubItems[10].Text);
                         PrintDetailsQuery.Parameters.AddWithValue("PrintDate", date);
                         PrintDetailsQuery.Parameters.AddWithValue("PrintTime", time);
+                        PrintDetailsQuery.Parameters.AddWithValue("image", StoreTempImage);
 
-
+                        #region Can be need but not need now 
                         //PersonDataQuery.CommandType = CommandType.StoredProcedure;
                         //PrintDetailsQuery.Parameters.Add("BillNo", SqlDbType.NVarChar).Value = BillNo;
                         //PrintDetailsQuery.Parameters.Add("SubBillNo", SqlDbType.NVarChar).Value = listView1.Items[i].SubItems[2].Text;
@@ -317,7 +321,7 @@ namespace RBSoft.Forms
                         //PrintDetailsQuery.Parameters.Add("PrintStatus", SqlDbType.NVarChar).Value = listView1.Items[i].SubItems[10].Text;
                         //PrintDetailsQuery.Parameters.Add("PrintDate", SqlDbType.NVarChar).Value = date;
                         //PrintDetailsQuery.Parameters.Add("PrintTime", SqlDbType.NVarChar).Value = time;
-
+                        #endregion
 
 
                         sql.Open();
@@ -342,8 +346,35 @@ namespace RBSoft.Forms
                 MessageBox.Show("All Data Not Entry , Contact With System Admin");
             }
         }
+
         #endregion
 
-        
+
+        #region Browse That image and sote to the Database 
+        /// <summary>
+        /// Store Printing Image 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GiveImageToStore(object sender, EventArgs e)
+        {
+            OpenFileDialog fop = new OpenFileDialog();
+            fop.InitialDirectory = @"C:\";
+            fop.Filter = "[JPG,JPEG]|*.jpg";
+            if (fop.ShowDialog() == DialogResult.OK)
+            {
+                FileStream FS = new FileStream(@fop.FileName, FileMode.Open, FileAccess.Read);
+                byte[] img = new byte[FS.Length];
+                FS.Read(img, 0, Convert.ToInt32(FS.Length));
+                StoreTempImage = img;
+                txtFileName.Text = fop.SafeFileName.ToString();
+            }
+        }
+
+        #endregion
+
+
+
+
     }
 }
