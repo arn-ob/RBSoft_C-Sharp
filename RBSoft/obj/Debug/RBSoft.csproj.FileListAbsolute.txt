@@ -73,3 +73,4 @@ M:\Git Project\RBSoft\RBSoft\bin\Debug\INIFileParser.dll
 M:\Git Project\RBSoft\RBSoft\bin\Debug\INIFileParser.xml
 M:\Git Project\RBSoft\RBSoft\bin\Debug\Connection.ini
 M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Forms.frmSearchData.resources
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.MainMenuWorkChoice.resources

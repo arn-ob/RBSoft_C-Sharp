@@ -18,7 +18,7 @@ namespace RBSoft.Forms
         #region Global Variable 
 
 
-        string TempFileName;
+        
         byte[] StoreTempImage;
         string sysID = "Null";
         string BillNo = "Null";
@@ -160,7 +160,7 @@ namespace RBSoft.Forms
         /// <param name="e"></param>
         private void GoBack(object sender, EventArgs e)
         {
-            MainWindow main = new MainWindow();
+            MainMenuWorkChoice main = new MainMenuWorkChoice();
             //DataEntry.DataEntry de = new DataEntry.DataEntry();
             Forms.frmWorkOder frm1 = new Forms.frmWorkOder();
             this.Close();

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using RBSoft;
 using System.Data.SqlClient;
 using RBSoft.Plugin;
+using System.Data;
 
 namespace RBSoft
 {
@@ -23,34 +24,31 @@ namespace RBSoft
     /// </summary>
     public partial class MainWindow : Window
     {
+        int loginAttempt = 0;
+
+
         public MainWindow()
         {
             InitializeComponent();
             checkConnection();
 
-
-
-            BtnAccountHistory.IsEnabled = false;
-            BtnClientNameSearch.IsEnabled = false;
-            BtnEmployeeLog.IsEnabled = false;
-            BtnPrintWork.IsEnabled = false;
-            BtnEmplyeeInfo.IsEnabled = false;
-            BtnEditAccount.IsEnabled = false;
-
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow main = new MainWindow();
-            //DataEntry.DataEntry de = new DataEntry.DataEntry();
-            Forms.frmWorkOder frm1 = new Forms.frmWorkOder();
+        #region OldCode
+        //private void button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    MainWindow main = new MainWindow();
+        //    //DataEntry.DataEntry de = new DataEntry.DataEntry();
+        //    Forms.frmWorkOder frm1 = new Forms.frmWorkOder();
 
 
-            main.Close();
-            this.Hide();
-            frm1.Show();
+        //    main.Close();
+        //    this.Hide();
+        //    frm1.Show();
 
-        }
+        //}
+        #endregion
+
 
         public void checkConnection()
         {
@@ -71,20 +69,117 @@ namespace RBSoft
             }
 
         }
+
+
+
+
+        /// <summary>
+        /// Exit Button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_Click_1(object sender, RoutedEventArgs e)
         {
             RBSoft.Plugin.PlugInCode.CloseAllWindow();
         }
 
-        private void SearchDatabtnClick(object sender, RoutedEventArgs e)
+
+
+        /// <summary>
+        /// Log In Button Code
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void BtnLoginClick(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
-           
-            Forms.frmSearchData frm1 = new Forms.frmSearchData();
-            
-            main.Close();
-            this.Hide();
-            frm1.Show();
+            //Check Attempt 
+            if (loginAttempt == 5)
+            {
+
+                #region Store Attepmt Log to DB
+
+                SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
+                SqlCommand AttemptLog = new SqlCommand();
+
+
+                AttemptLog.CommandText = "INSERT INTO dbo.AttemptLog(AttemptUserName,AttemptPass,AttemptTime,AttemptDate) VALUES (@AttemptUserName, @AttemptPass, @AttemptTime, @AttemptDate)";
+                AttemptLog.CommandType = CommandType.Text;
+                AttemptLog.Connection = sql;
+
+                AttemptLog.Parameters.AddWithValue("AttemptUserName", txtusername.Text);
+                AttemptLog.Parameters.AddWithValue("AttemptPass", txtpasswork.Text );
+                AttemptLog.Parameters.AddWithValue("AttemptTime", DateTime.Now.TimeOfDay.ToString());
+                AttemptLog.Parameters.AddWithValue("AttemptDate",DateTime.Now.Date.ToString());
+                
+                try
+                {
+                    sql.Close();
+                    sql.Open();
+                    AttemptLog.ExecuteNonQuery();
+                    sql.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Connection Problem Detected");
+                }
+                sql.Close();
+                #endregion
+
+
+                MessageBox.Show("So Many Attempt , It Will Report To Admin ");
+                Close();
+                MainMenuWorkChoice main = new MainMenuWorkChoice();
+                main.Close();
+             
+            }
+            else
+            {
+                string username = txtusername.Text;
+                string password = txtpasswork.Text;
+
+                SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
+                sql.Close();
+                sql.Open();
+
+
+                SqlDataAdapter adapt = new SqlDataAdapter("select EmpUserName,EmpSoftPass from tblEmployee where EmpUserName='" + username + "'and EmpSoftPass ='" + password + "'", sql);
+                DataTable dt = new DataTable();
+                adapt.Fill(dt);
+
+
+                if (dt.Rows.Count > 0)
+                {
+                    sql.Close();
+                    MessageBox.Show("Login Sucess");
+                    MainMenuWorkChoice mainMenu = new MainMenuWorkChoice();
+                    mainMenu.Show();
+                    this.Hide();
+
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Login Please Check username and password");
+                    loginAttempt++;
+
+                    sql.Close();
+                }
+                sql.Close();
+            }
         }
+
+
+        #region OldCode
+        //private void SearchDatabtnClick(object sender, RoutedEventArgs e)
+        //{
+        //    MainWindow main = new MainWindow();
+
+        //    Forms.frmSearchData frm1 = new Forms.frmSearchData();
+
+        //    main.Close();
+        //    this.Hide();
+        //    frm1.Show();
+        //}
+        #endregion
     }
 }

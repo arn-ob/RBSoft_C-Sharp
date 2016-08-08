@@ -133,6 +133,12 @@
     <Compile Include="Forms\frmWorkOder.Designer.cs">
       <DependentUpon>frmWorkOder.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainMenuWorkChoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenuWorkChoice.Designer.cs">
+      <DependentUpon>MainMenuWorkChoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmWorkOder.resx">
       <DependentUpon>frmWorkOder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenuWorkChoice.resx">
+      <DependentUpon>MainMenuWorkChoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

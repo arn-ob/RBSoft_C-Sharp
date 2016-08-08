@@ -90,7 +90,7 @@ namespace RBSoft.Forms
                     sql.Open();
                     AllDataShowGridView.Show();
 
-                    SqlDataAdapter adapt = new SqlDataAdapter("select * from tblPerson,tblPrintDetails", sql);
+                    SqlDataAdapter adapt = new SqlDataAdapter("select * from tblPerson,tblPrintDetails where tblPerson.BillNo=tblPrintDetails.BillNo", sql);
                     DataTable dt = new DataTable();
                     adapt.Fill(dt);
                     AllDataShowGridView.DataSource = dt;
@@ -142,7 +142,7 @@ namespace RBSoft.Forms
 
 
             this.Hide();
-            MainWindow main = new MainWindow();
+            MainMenuWorkChoice main = new MainMenuWorkChoice();
             main.Show();
             
 
