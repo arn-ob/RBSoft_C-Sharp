@@ -24,6 +24,9 @@ namespace RBSoft
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public string EmpRole { get; set; }
+
         int loginAttempt = 0;
 
 
@@ -57,7 +60,7 @@ namespace RBSoft
             try
             {
                 sql.Open();
-                if (sql.State == System.Data.ConnectionState.Open)
+                if (sql.State == ConnectionState.Open)
                 {
                     SqlStatus.Text = "Connected";
                     sql.Close();
@@ -135,8 +138,8 @@ namespace RBSoft
             }
             else
             {
-                string username = txtusername.Text;
-                string password = txtpasswork.Text;
+                string username = "arnob";// txtusername.Text;
+                string password = "arnob";//txtpasswork.Text;
 
                 SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
                 sql.Close();
@@ -155,6 +158,20 @@ namespace RBSoft
                     MainMenuWorkChoice mainMenu = new MainMenuWorkChoice();
                     mainMenu.Show();
                     this.Hide();
+
+                    
+                    string script = "select EmpjobTitle from tblEmployee where EmpUserName='" + username + "'and EmpSoftPass ='" + password + "'";
+                    sql.Open();
+                    SqlCommand myCommand = new SqlCommand(script, sql);
+                    SqlDataReader myReader = null;
+                    myReader = myCommand.ExecuteReader();
+                    while (myReader.Read())
+                    {
+                        EmpRole = myReader["EmpjobTitle"].ToString();
+                        //MessageBox.Show(PlugInCode.EmployeeRole.Role.ToString());  ////test Code done  
+                    }
+                    sql.Close();
+
 
                 }
                 else

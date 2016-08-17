@@ -74,3 +74,9 @@ M:\Git Project\RBSoft\RBSoft\bin\Debug\INIFileParser.xml
 M:\Git Project\RBSoft\RBSoft\bin\Debug\Connection.ini
 M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Forms.frmSearchData.resources
 M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.MainMenuWorkChoice.resources
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Forms.frmAccount.resources
+M:\Git Project\RBSoft\RBSoft\bin\Debug\RBSoft.exe.manifest
+M:\Git Project\RBSoft\RBSoft\bin\Debug\RBSoft.application
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.TrustInfo.xml
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.exe.manifest
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.application

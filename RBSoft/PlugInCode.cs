@@ -23,6 +23,19 @@ namespace RBSoft.Plugin
     public partial class PlugInCode
     {
 
+
+        #region Login person Rolo/Work as
+        public class EmployeeRole
+        {
+           
+             
+
+
+        }
+        #endregion
+
+
+
         #region Create Connection To database 
         public class GetConnection
         {

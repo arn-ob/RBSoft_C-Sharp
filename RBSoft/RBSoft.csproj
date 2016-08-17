@@ -52,6 +52,15 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>Custom</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="INIFileParser, Version=2.3.0.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL">
       <HintPath>..\packages\ini-parser.2.3.0\lib\net20\INIFileParser.dll</HintPath>
@@ -121,6 +130,12 @@
     <Compile Include="DataEntry\DataEntry.xaml.cs">
       <DependentUpon>DataEntry.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAccount.Designer.cs">
+      <DependentUpon>frmAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmSearchData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +174,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Forms\frmAccount.resx">
+      <DependentUpon>frmAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSearchData.resx">
       <DependentUpon>frmSearchData.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +194,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -208,6 +227,21 @@
     <Resource Include="Picture\BackButton.png" />
     <Resource Include="Picture\Button-Back-1-512.png" />
     <Resource Include="Picture\Revolution BD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\file_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\work-order-icon resige.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\accounting-and-finance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\EmployeeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picture\edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
