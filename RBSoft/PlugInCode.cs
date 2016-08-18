@@ -49,8 +49,8 @@ namespace RBSoft.Plugin
             //private static string DbName;
             private static string UsrName;
             private static string Pasword;
-
-
+            private static string Mode;
+            private static string getMOde;
             /// <summary>
             /// Public static method to access connection string throw out the project 
             /// </summary>
@@ -61,17 +61,39 @@ namespace RBSoft.Plugin
                 fileIniData.Parser.Configuration.CommentString = "#";
                 IniData parsedData = fileIniData.ReadFile("Connection.ini");
                 SrvName = parsedData["GeneralConnectionConfiguration"]["Server"];
-               // DbName = parsedData["GeneralConnectionConfiguration"]["Database"].ToString();  ///Cant connected to the DB ... Problem not solve 
+                // DbName = parsedData["GeneralConnectionConfiguration"]["Database"].ToString();  ///Cant connected to the DB ... Problem not solve 
                 UsrName = parsedData["GeneralConnectionConfiguration"]["UserName"];
                 Pasword = parsedData["GeneralConnectionConfiguration"]["password"];
 
+               // Mode = parsedData["GeneralConnectionConfiguration"]["ConfigSetup"];
                 //return "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
                 //+ UsrName + "; password=" + Pasword + ";Trusted_Connection=yes;";//Build Connection String and Return
             }
+            
+            //public static void check()
+            //{
+            //    if (Mode == "trustMode")
+            //    {
+            //        getMOde = "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
+            //        + UsrName + "; password=" + Pasword + ";Trusted_Connection=yes;";//Build Connection String and Return
+            //    }
+            //    else if (Mode == "lanMode")
+            //    {
+            //        getMOde = "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
+            //            + UsrName + "; password=" + Pasword + "";
+            //    }
+            //    else
+            //    {
+            //        getMOde = "Error";
+            //    }
+
+            //}
+
             public static string ConnString()
             {
                 return "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
-               + UsrName + "; password=" + Pasword + ";Trusted_Connection=yes;";//Build Connection String and Return
+                     + UsrName + "; password=" + Pasword + ";Trusted_Connection=yes;";//Build Connection String and Return
+
             }
 
          }

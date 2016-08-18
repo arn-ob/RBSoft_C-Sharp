@@ -24,6 +24,7 @@ namespace RBSoft
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static string role;
 
         public string EmpRole { get; set; }
 
@@ -140,6 +141,7 @@ namespace RBSoft
             {
                 string username = "arnob";// txtusername.Text;
                 string password = "arnob";//txtpasswork.Text;
+                role = username;
 
                 SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
                 sql.Close();

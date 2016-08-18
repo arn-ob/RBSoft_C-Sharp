@@ -17,23 +17,29 @@ namespace RBSoft.Forms
 
         string date = DateTime.Now.Day + "." + DateTime.Now.Month + "." + DateTime.Now.Year;
         string time = DateTime.Now.Hour + "." + DateTime.Now.Minute + "." + DateTime.Now.Second;
-
         //string MatchFound;
         string Bill_no_var;
 
+
+        #region frm Setup
         public frmAccount()
         {
             InitializeComponent();
             grpAccount.Hide();
         }
+        #endregion
 
+        #region Process Button
         private void btn_Proceed(object sender, EventArgs e)
         {
             SearchMemberByID();
         }
+        #endregion
 
-
-
+        #region Search BillNO and Get Data
+        /// <summary>
+        /// Search bill record and ask for get those data 
+        /// </summary>
         public void SearchMemberByID()
         {
             SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
@@ -57,8 +63,13 @@ namespace RBSoft.Forms
             }
 
         }
-
-
+        #endregion
+        
+        #region Collect data to the text box and show to the accountent
+        /// <summary>
+        /// Collect data of the current Bill No 
+        /// </summary>
+        /// <param name="value"></param>
         // Get Member Data to the Text Field 
         public void GetDataToTextField(string value)
         {
@@ -87,7 +98,7 @@ namespace RBSoft.Forms
                 txtClientPhnNo.Text = val2;
                 txtClientAddress.Text = val3;
 
-                //Never disconnect sql here
+                // Here Never disconnect sql
 
             }
             try
@@ -105,13 +116,22 @@ namespace RBSoft.Forms
               }
               catch (Exception ex)
               {
-                  MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  MessageBox.Show(ex.Message, "Error");
               }
 
             
                 sql.Close();
                 grpAccount.Show();
         }
+        #endregion
+
+
+
+
+
+
+
+
 
 
     }

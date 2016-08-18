@@ -8,7 +8,7 @@
         WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen" 
         Width="1000" Height="442"
-        Title="MainWindow" >
+        Title="MainWindow" Icon="Picture/software_Icon.ico" >
     <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto">
         <!--
         <Grid x:Name="AllBtn" HorizontalAlignment="Left" Margin="10,269,0,0" VerticalAlignment="Top" Height="349" Width="980" Panel.ZIndex="-2">

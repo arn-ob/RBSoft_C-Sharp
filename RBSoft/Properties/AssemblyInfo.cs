@@ -8,9 +8,9 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("RBSoft")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Revolution Bangladesh Software")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Revolution Bangladesh")]
 [assembly: AssemblyProduct("RBSoft")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]

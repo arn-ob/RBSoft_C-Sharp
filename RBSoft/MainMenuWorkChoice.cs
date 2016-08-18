@@ -8,19 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RBSoft.Plugin;
+using System.Data.SqlClient;
 
 namespace RBSoft
 {
     public partial class MainMenuWorkChoice : Form
     {
-        public string role;
-
+        public static string role;
+        public static string val1;
 
 
         public MainMenuWorkChoice()
-        {
+        { 
             InitializeComponent();
-
+            ShowRole();
+            IAMa.Text = val1.ToString();
             //Code not Ready
             //AccessRole();
 
@@ -58,6 +60,7 @@ namespace RBSoft
             this.Hide();
             account.Show();
             this.Close();
+            
         }
 
         
@@ -73,7 +76,32 @@ namespace RBSoft
            
 
         }
+        // Test data 
+        public static void ShowRole()
+        {
+            string r = MainWindow.role.ToString();
+            
+            SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
+            sql.Close();
+            DataTable dt = new DataTable();
+            sql.Open();
+            SqlDataReader myReaderw = null;
 
+            SqlCommand myCommand = new SqlCommand("select * from dbo.tblEmployee where tblEmployee.EmpUserName ='" + r + "'", sql);
+
+             myReaderw = myCommand.ExecuteReader();
+
+
+
+            while (myReaderw.Read())
+            {
+
+               val1 = myReaderw["EmpUserName"].ToString();
+                //string val2 = myReaderw["PersonPhnNo"].ToString();
+                //string val3 = myReaderw["PersonAddress"].ToString();
+                
+            }
+        }
         
     }
 }

@@ -44,7 +44,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.IAM = new System.Windows.Forms.Label();
+            this.IAMa = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -213,14 +213,14 @@
             this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 14;
             // 
-            // IAM
+            // IAMa
             // 
-            this.IAM.AutoSize = true;
-            this.IAM.Location = new System.Drawing.Point(429, 23);
-            this.IAM.Name = "IAM";
-            this.IAM.Size = new System.Drawing.Size(44, 13);
-            this.IAM.TabIndex = 15;
-            this.IAM.Text = "Not Get";
+            this.IAMa.AutoSize = true;
+            this.IAMa.Location = new System.Drawing.Point(429, 23);
+            this.IAMa.Name = "IAMa";
+            this.IAMa.Size = new System.Drawing.Size(44, 13);
+            this.IAMa.TabIndex = 15;
+            this.IAMa.Text = "Not Get";
             // 
             // MainMenuWorkChoice
             // 
@@ -230,7 +230,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(535, 462);
             this.ControlBox = false;
-            this.Controls.Add(this.IAM);
+            this.Controls.Add(this.IAMa);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -246,6 +246,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenuWorkChoice";
             this.Text = "Chose Your Work";
             this.ResumeLayout(false);
@@ -270,6 +271,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label IAM;
+        private System.Windows.Forms.Label IAMa;
     }
 }

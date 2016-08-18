@@ -51,6 +51,7 @@
             this.StatusComBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -75,7 +76,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.ProceedToPrint = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -295,6 +295,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Print Details";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(222, 163);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "Image";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.GiveImageToStore);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -483,16 +493,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.ClearEveryThing);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(222, 163);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "Image";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.GiveImageToStore);
-            // 
             // frmWorkOder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,6 +530,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmWorkOder";
             this.Text = "Work Oder";
             this.Load += new System.EventHandler(this.frmWorkOder_Load);

@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="RBSoft.exe.manifest" size="5141">
+    <dependentAssembly dependencyType="install" codebase="RBSoft.exe.manifest" size="5648">
       <assemblyIdentity name="RBSoft.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>l+1aZsb4Sva5Wr8DyKWNY9ZRjD+SD648N1pLbDrrJ5A=</dsig:DigestValue>
+        <dsig:DigestValue>Ghai+ruR5ZXiQX4Q28qU4+7eBK+px2YuMQErrx6+q60=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
