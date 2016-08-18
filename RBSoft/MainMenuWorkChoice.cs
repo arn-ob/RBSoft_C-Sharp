@@ -56,7 +56,7 @@ namespace RBSoft
 
         private void btn_Account(object sender, EventArgs e)
         {
-            Forms.frmAccount account = new Forms.frmAccount();
+            Forms.frmAccounts account = new Forms.frmAccounts();
             this.Hide();
             account.Show();
             this.Close();

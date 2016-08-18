@@ -12,29 +12,47 @@ using System.Windows.Forms;
 
 namespace RBSoft.Forms
 {
-    public partial class frmAccount : Form
+    public partial class frmAccounts : Form
     {
 
         string date = DateTime.Now.Day + "." + DateTime.Now.Month + "." + DateTime.Now.Year;
         string time = DateTime.Now.Hour + "." + DateTime.Now.Minute + "." + DateTime.Now.Second;
         //string MatchFound;
-        string Bill_no_var;
-
+        public string Bill_no_var;
+        public string val;
+        string CheckValAmountTemp = "0";
+        string CheckValAdvanceTemp = "0";
 
         #region frm Setup
-        public frmAccount()
+        public frmAccounts()
         {
             InitializeComponent();
             grpAccount.Hide();
+            txtPay.ReadOnly = true;
+            txtDate.Text = date;
+            btnCalculate.IsAccessible = false;
+            btnRecordAndPrint.IsAccessible = false;
+            btnPrintOnly.IsAccessible = false;
+            btnGetAmountCal.IsAccessible = true;
+
         }
         #endregion
+
+        
+
 
         #region Process Button
         private void btn_Proceed(object sender, EventArgs e)
         {
+            btnCalculate.IsAccessible = false;
+            btnRecordAndPrint.IsAccessible = false;
+            btnPrintOnly.IsAccessible = false;
+            txtPay.ReadOnly = true;
+            btnGetAmountCal.IsAccessible = true;
             SearchMemberByID();
         }
         #endregion
+
 
         #region Search BillNO and Get Data
         /// <summary>
@@ -65,6 +83,7 @@ namespace RBSoft.Forms
         }
         #endregion
         
+
         #region Collect data to the text box and show to the accountent
         /// <summary>
         /// Collect data of the current Bill No 
@@ -80,12 +99,11 @@ namespace RBSoft.Forms
             DataTable dt = new DataTable();
             sql.Open();
             SqlDataReader myReaderw = null;
-            
+           
+
             SqlCommand myCommand = new SqlCommand("select * from dbo.tblPerson where tblPerson.BillNo ='" + value + "'", sql);
             
             myReaderw = myCommand.ExecuteReader();
-
-
 
             while (myReaderw.Read())
             {
@@ -99,8 +117,27 @@ namespace RBSoft.Forms
                 txtClientAddress.Text = val3;
 
                 // Here Never disconnect sql
-
             }
+
+            sql.Close();
+            sql.Open();
+            //Check wither he before instart data or not
+            SqlDataReader myReaderCheck = null;
+            SqlCommand myCommandCheck = new SqlCommand("select * from dbo.tblaccount where tblaccount.BillNo ='" + value + "'", sql);
+
+            myReaderCheck = myCommandCheck.ExecuteReader();
+           
+            while (myReaderCheck.Read())
+            {
+
+                string CheckValAmount = myReaderCheck["tkAmount"].ToString();
+                string CheckValAdvance = myReaderCheck["tkPayment"].ToString();
+                CheckValAmountTemp = CheckValAmount;
+                CheckValAdvanceTemp = CheckValAdvance;
+
+                MessageBox.Show(CheckValAdvanceTemp.ToString());
+            }
+
             try
             {
 
@@ -123,16 +160,68 @@ namespace RBSoft.Forms
                 sql.Close();
                 grpAccount.Show();
         }
+
+
+
+        #endregion
+
+
+        #region Sft Get from Account
+        //Sft get Done
+        public int AmountFromSft ()
+        {
+            //string temp;
+            string bill = billno.Text.ToString();
+            SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
+            sql.Close();
+            DataTable dt = new DataTable();
+            sql.Open();
+            SqlDataReader myReaderw = null;
+
+            //SqlCommand myCommand = new SqlCommand("select * from dbo.tblPrintDetails where tblPrintDetails.BillNo ='" + bill + "'", sql);
+            SqlCommand myCommand = new SqlCommand("SELECT * FROM dbo.tblPerson , dbo.tblPrintDetails where tblPrintDetails.BillNo = '"+bill+"' and tblPrintDetails.BillNo = tblPerson.BillNo", sql);
+
+            myReaderw = myCommand.ExecuteReader();
+
+
+
+            while (myReaderw.Read())
+            {
+
+                string val1 = myReaderw["Sft"].ToString();
+                val = val1;
+                
+            }
+
+            //MessageBox.Show(val.ToString());
+            string txtboxamount = txtPriceValue.Text.ToString();
+            int parseToint;
+            int txtboxValue;
+            int.TryParse(val, out parseToint);
+
+            int.TryParse(txtboxamount, out txtboxValue);
+
+            int calcluate = txtboxValue * parseToint;
+
+
+            return calcluate;
+        }
         #endregion
 
 
 
+        private void btnGetAmount(object sender, EventArgs e)
+        {
+            txtPay.ReadOnly = false;
+            txtAmount.Text = AmountFromSft().ToString();
+            this.IsAccessible = false;
+            btnCalculate.IsAccessible = true;
+            btnRecordAndPrint.IsAccessible = false;
+        }
 
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
 
-
-
-
-
-
+        }
     }
 }
