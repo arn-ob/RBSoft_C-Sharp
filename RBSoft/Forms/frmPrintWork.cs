@@ -194,5 +194,22 @@ namespace RBSoft.Forms
             this.Close();
 
         }
+
+        private void btn_UpdateRecord(object sender, EventArgs e)
+        {
+            string combox = StatusComboBx.Text.ToString();
+            SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
+            SqlCommand update = new SqlCommand();
+
+
+            update.CommandText = "UPDATE dbo.tblPrintDetails  SET PrintStatus='" +combox+ "' WHERE BillNo = '" + txtBillNO.Text.ToString() + "'  AND SubBillNo = '" + txtSubBillNO.Text.ToString() + "'";
+            update.CommandType = CommandType.Text;
+            update.Connection = sql;
+
+            sql.Open();
+            update.ExecuteNonQuery();
+            sql.Close();
+            MessageBox.Show("Data Updated");
+        }
     }
 }

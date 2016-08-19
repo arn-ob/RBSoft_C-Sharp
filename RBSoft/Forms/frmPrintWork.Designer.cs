@@ -300,6 +300,7 @@
             this.btnUpdateRecord.TabIndex = 19;
             this.btnUpdateRecord.Text = "Update Record";
             this.btnUpdateRecord.UseVisualStyleBackColor = true;
+            this.btnUpdateRecord.Click += new System.EventHandler(this.btn_UpdateRecord);
             // 
             // btnGoBack
             // 
