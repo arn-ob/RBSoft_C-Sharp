@@ -37,6 +37,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnBack = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AllDataShowGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OnlyBillNoShowGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -124,12 +125,22 @@
             this.BtnBack.UseVisualStyleBackColor = true;
             this.BtnBack.Click += new System.EventHandler(this.btnBackClick);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(805, 137);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(127, 13);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Beta Version Not For Use";
+            // 
             // frmSearchData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 630);
             this.ControlBox = false;
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
@@ -159,5 +170,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BtnBack;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -58,6 +58,7 @@
             this.btnGoback = new System.Windows.Forms.Button();
             this.btnPrintOnly = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ClientDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowTheOrder)).BeginInit();
@@ -361,13 +362,22 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(618, 138);
+            this.button1.Location = new System.Drawing.Point(445, 137);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 13;
             this.button1.Text = "Reset";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnReset);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(674, 137);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(127, 13);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Beta Version Not For Use";
             // 
             // frmAccounts
             // 
@@ -375,6 +385,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 589);
             this.ControlBox = false;
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPrintOnly);
             this.Controls.Add(this.btnGoback);
@@ -431,5 +442,6 @@
         private System.Windows.Forms.Button btnGoback;
         private System.Windows.Forms.Button btnPrintOnly;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -139,6 +139,12 @@
     <Compile Include="Forms\frmAccount.Designer.cs">
       <DependentUpon>frmAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmPrintWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPrintWork.Designer.cs">
+      <DependentUpon>frmPrintWork.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmSearchData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\frmAccount.resx">
       <DependentUpon>frmAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPrintWork.resx">
+      <DependentUpon>frmPrintWork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSearchData.resx">
       <DependentUpon>frmSearchData.cs</DependentUpon>

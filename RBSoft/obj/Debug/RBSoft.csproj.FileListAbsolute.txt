@@ -80,3 +80,4 @@ M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.TrustInfo.xml
 M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.exe.manifest
 M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.application
 M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Forms.frmAccounts.resources
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Forms.frmPrintWork.resources

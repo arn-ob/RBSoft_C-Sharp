@@ -76,6 +76,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.ProceedToPrint = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -493,12 +494,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.ClearEveryThing);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(688, 133);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(127, 13);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Beta Version Not For Use";
+            // 
             // frmWorkOder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 698);
             this.ControlBox = false;
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ProceedToPrint);
             this.Controls.Add(this.button4);
@@ -591,5 +602,6 @@
         private System.Windows.Forms.ColumnHeader dates;
         private System.Windows.Forms.ColumnHeader times;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label14;
     }
 }

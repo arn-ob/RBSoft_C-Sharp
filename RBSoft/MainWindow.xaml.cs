@@ -157,14 +157,17 @@ namespace RBSoft
                 {
                     sql.Close();
                     MessageBox.Show("Login Sucess");
-                        
+
                     // This is Default
                     // MainMenuWorkChoice mainMenu = new MainMenuWorkChoice(); 
                     // mainMenu.Show();
 
                     //This code for only Dev Porpose
-                    Forms.frmAccounts acc = new Forms.frmAccounts();
-                    acc.Show();
+                    //Forms.frmAccounts acc = new Forms.frmAccounts();
+                    //acc.Show();
+                    Forms.frmPrintWork print = new Forms.frmPrintWork();
+                    print.Show();
+
                     //............................
 
                     //Continue code
