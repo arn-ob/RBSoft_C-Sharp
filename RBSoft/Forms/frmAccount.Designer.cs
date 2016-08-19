@@ -47,8 +47,6 @@
             this.btnGetAmountCal = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPriceValue = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtDue = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -59,6 +57,7 @@
             this.btnRecordAndPrint = new System.Windows.Forms.Button();
             this.btnGoback = new System.Windows.Forms.Button();
             this.btnPrintOnly = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ClientDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowTheOrder)).BeginInit();
@@ -204,8 +203,6 @@
             this.grpAccount.Controls.Add(this.btnGetAmountCal);
             this.grpAccount.Controls.Add(this.label14);
             this.grpAccount.Controls.Add(this.txtPriceValue);
-            this.grpAccount.Controls.Add(this.label13);
-            this.grpAccount.Controls.Add(this.txtTotal);
             this.grpAccount.Controls.Add(this.label12);
             this.grpAccount.Controls.Add(this.txtDue);
             this.grpAccount.Controls.Add(this.label10);
@@ -214,7 +211,7 @@
             this.grpAccount.Controls.Add(this.txtPay);
             this.grpAccount.Location = new System.Drawing.Point(422, 188);
             this.grpAccount.Name = "grpAccount";
-            this.grpAccount.Size = new System.Drawing.Size(386, 258);
+            this.grpAccount.Size = new System.Drawing.Size(386, 225);
             this.grpAccount.TabIndex = 8;
             this.grpAccount.TabStop = false;
             this.grpAccount.Text = "Account";
@@ -222,7 +219,7 @@
             // txtDate
             // 
             this.txtDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDate.Location = new System.Drawing.Point(136, 220);
+            this.txtDate.Location = new System.Drawing.Point(136, 185);
             this.txtDate.Name = "txtDate";
             this.txtDate.ReadOnly = true;
             this.txtDate.Size = new System.Drawing.Size(229, 20);
@@ -232,7 +229,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 219);
+            this.label5.Location = new System.Drawing.Point(24, 184);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 18);
             this.label5.TabIndex = 23;
@@ -265,25 +262,6 @@
             this.txtPriceValue.Size = new System.Drawing.Size(80, 20);
             this.txtPriceValue.TabIndex = 20;
             this.txtPriceValue.Text = "20";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(21, 182);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(44, 20);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "Total";
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTotal.Location = new System.Drawing.Point(136, 184);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(229, 20);
-            this.txtTotal.TabIndex = 18;
             // 
             // label12
             // 
@@ -344,7 +322,7 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(422, 464);
+            this.btnCalculate.Location = new System.Drawing.Point(422, 424);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(386, 32);
             this.btnCalculate.TabIndex = 9;
@@ -354,30 +332,42 @@
             // 
             // btnRecordAndPrint
             // 
-            this.btnRecordAndPrint.Location = new System.Drawing.Point(422, 502);
+            this.btnRecordAndPrint.Location = new System.Drawing.Point(422, 464);
             this.btnRecordAndPrint.Name = "btnRecordAndPrint";
-            this.btnRecordAndPrint.Size = new System.Drawing.Size(190, 32);
+            this.btnRecordAndPrint.Size = new System.Drawing.Size(190, 63);
             this.btnRecordAndPrint.TabIndex = 10;
             this.btnRecordAndPrint.Text = "Record Data And Print";
             this.btnRecordAndPrint.UseVisualStyleBackColor = true;
+            this.btnRecordAndPrint.Click += new System.EventHandler(this.btnRecordDataAndPrint);
             // 
             // btnGoback
             // 
-            this.btnGoback.Location = new System.Drawing.Point(422, 545);
+            this.btnGoback.Location = new System.Drawing.Point(422, 538);
             this.btnGoback.Name = "btnGoback";
-            this.btnGoback.Size = new System.Drawing.Size(386, 32);
+            this.btnGoback.Size = new System.Drawing.Size(386, 31);
             this.btnGoback.TabIndex = 11;
             this.btnGoback.Text = "Go Back";
             this.btnGoback.UseVisualStyleBackColor = true;
+            this.btnGoback.Click += new System.EventHandler(this.btnGoback_Click);
             // 
             // btnPrintOnly
             // 
-            this.btnPrintOnly.Location = new System.Drawing.Point(618, 502);
+            this.btnPrintOnly.Location = new System.Drawing.Point(618, 462);
             this.btnPrintOnly.Name = "btnPrintOnly";
-            this.btnPrintOnly.Size = new System.Drawing.Size(190, 32);
+            this.btnPrintOnly.Size = new System.Drawing.Size(190, 64);
             this.btnPrintOnly.TabIndex = 12;
             this.btnPrintOnly.Text = "Only Print Invoice";
             this.btnPrintOnly.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(618, 138);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnReset);
             // 
             // frmAccounts
             // 
@@ -385,6 +375,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 589);
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPrintOnly);
             this.Controls.Add(this.btnGoback);
             this.Controls.Add(this.btnRecordAndPrint);
@@ -428,8 +419,6 @@
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPay;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtDue;
         private System.Windows.Forms.Button btnGetAmountCal;
@@ -441,5 +430,6 @@
         private System.Windows.Forms.Button btnRecordAndPrint;
         private System.Windows.Forms.Button btnGoback;
         private System.Windows.Forms.Button btnPrintOnly;
+        private System.Windows.Forms.Button button1;
     }
 }

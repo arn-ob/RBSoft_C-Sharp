@@ -19,9 +19,11 @@ namespace RBSoft.Forms
         string time = DateTime.Now.Hour + "." + DateTime.Now.Minute + "." + DateTime.Now.Second;
         //string MatchFound;
         public string Bill_no_var;
-        public string val;
-        string CheckValAmountTemp = "0";
-        string CheckValAdvanceTemp = "0";
+        public string SftValue = "0";
+        static string  CheckValAmountTemp = "0";
+        static string  CheckValPayTemp = "0";
+        static string CheckValDueTemp = "0";
+        static string CheckDateTemp = "0";
 
         #region frm Setup
         public frmAccounts()
@@ -29,11 +31,12 @@ namespace RBSoft.Forms
             InitializeComponent();
             grpAccount.Hide();
             txtPay.ReadOnly = true;
-            txtDate.Text = date;
-            btnCalculate.IsAccessible = false;
-            btnRecordAndPrint.IsAccessible = false;
-            btnPrintOnly.IsAccessible = false;
-            btnGetAmountCal.IsAccessible = true;
+            txtDate.Text = "Present Date :" + date.ToString();
+            btnCalculate.Hide();
+            btnRecordAndPrint.Hide();
+            btnPrintOnly.Hide();
+            btnGetAmountCal.Hide();
+            Bill_no_var = billno.Text.ToString();
 
         }
         #endregion
@@ -44,12 +47,13 @@ namespace RBSoft.Forms
         #region Process Button
         private void btn_Proceed(object sender, EventArgs e)
         {
-            btnCalculate.IsAccessible = false;
-            btnRecordAndPrint.IsAccessible = false;
-            btnPrintOnly.IsAccessible = false;
+            SftValue = "0";
+            txtDate.Text = "Present Date :" + date.ToString();
             txtPay.ReadOnly = true;
-            btnGetAmountCal.IsAccessible = true;
             SearchMemberByID();
+            CheckDBDATA();
+            
+
         }
         #endregion
 
@@ -121,7 +125,11 @@ namespace RBSoft.Forms
 
             sql.Close();
             sql.Open();
+
+
+            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!! Wrok start From Here
             //Check wither he before instart data or not
+
             SqlDataReader myReaderCheck = null;
             SqlCommand myCommandCheck = new SqlCommand("select * from dbo.tblaccount where tblaccount.BillNo ='" + value + "'", sql);
 
@@ -131,11 +139,14 @@ namespace RBSoft.Forms
             {
 
                 string CheckValAmount = myReaderCheck["tkAmount"].ToString();
-                string CheckValAdvance = myReaderCheck["tkPayment"].ToString();
+                string CheckValPay = myReaderCheck["tkPayment"].ToString();
+                string CheckValDue = myReaderCheck["tkDue"].ToString();
+                string CheckDate = myReaderCheck["PresentDate"].ToString();
                 CheckValAmountTemp = CheckValAmount;
-                CheckValAdvanceTemp = CheckValAdvance;
-
-                MessageBox.Show(CheckValAdvanceTemp.ToString());
+                CheckValPayTemp = CheckValPay;
+                CheckDateTemp = CheckDate;
+                CheckValDueTemp = CheckValDue;
+                //MessageBox.Show(CheckValAdvanceTemp.ToString());
             }
 
             try
@@ -166,38 +177,118 @@ namespace RBSoft.Forms
         #endregion
 
 
-        #region Sft Get from Account
+        #region Sft Get from Account ... Problem Get (When Multile Sft Come What i do)
         //Sft get Done
         public int AmountFromSft ()
         {
             //string temp;
             string bill = billno.Text.ToString();
+           // SqlConnection con = new SqlConnection(PlugInCode.GetConnection.ConnString());
+
+            #region old Sft find code
+            //sql.Close();
+            //DataTable dt = new DataTable();
+            //sql.Open();
+            //SqlDataReader myReaderw = null;
+
+            ////SqlCommand myCommand = new SqlCommand("select * from dbo.tblPrintDetails where tblPrintDetails.BillNo ='" + bill + "'", sql);
+            //SqlCommand myCommand = new SqlCommand("SELECT sum(convert(int,sft)) FROM dbo.tblPerson , dbo.tblPrintDetails where tblPrintDetails.BillNo = '" + bill+"' and tblPrintDetails.BillNo = tblPerson.BillNo", sql);
+
+            //myReaderw = myCommand.ExecuteReader();
+
+
+
+            //while (myReaderw.Read())
+            //{
+
+            //    string val1 = myReaderw["sum(convert(int,sft))"].ToString();
+            //    val = val1;
+            //    MessageBox.Show(val1);
+            //}
+            #endregion
+
+            #region TryOld Code
+            //SqlCommand testCMD = new SqlCommand("dbo.TestProcedure2", sql);
+            //testCMD.CommandType = CommandType.StoredProcedure;
+
+            //SqlParameter RetVal = testCMD.Parameters.Add ("RetVal", SqlDbType.VarChar);
+
+            //RetVal.Direction = ParameterDirection.ReturnValue;
+
+            //SqlParameter IdIn = testCMD.Parameters.Add("@BillNO", SqlDbType.VarChar, 11);
+            //IdIn.Direction = ParameterDirection.Input;
+            ////SqlParameter NumTitles = testCMD.Parameters.Add("@total_Sft", SqlDbType.VarChar, 20);
+            ////NumTitles.Direction = ParameterDirection.Output;
+
+            //IdIn.Value = bill.ToString();
+            //sql.Open();
+            //string strCount = testCMD.ExecuteScalar().ToString();
+            //MessageBox.Show(strCount);
+            //MessageBox.Show(RetVal.Value.ToString());
+            //SqlDataReader myReader = testCMD.ExecuteReader();
+            //Console.WriteLine("Book Titles for this Author:");
+            //while (myReader.Read())
+            //{
+            //    Console.WriteLine("{0}", myReader.GetString(2));
+            //};
+            //myReader.Close();
+            //Console.WriteLine("Number of Rows: " + NumTitles.Value);
+            //Console.WriteLine("Return Value: " + RetVal.Value);
+
+
+
+            //SqlCommand cmd = new SqlCommand("GetSum", con);
+            //cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.Add("@BillNO", SqlDbType.VarChar).Value = bill.ToString();
+            //SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            //DataTable dt = new DataTable();
+            //try
+            //{
+            //    if (con.State == ConnectionState.Closed)
+            //        con.Open();
+            //    adp.Fill(dt);
+            //    if (dt.Rows.Count > 0)
+            //    {
+            //        string ss = dt.Rows[0]..ToString();
+            //        MessageBox.Show(ss);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Not Get");
+            //    }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Not Good");
+            //}
+            #endregion
+
             SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
             sql.Close();
-            DataTable dt = new DataTable();
             sql.Open();
-            SqlDataReader myReaderw = null;
-
-            //SqlCommand myCommand = new SqlCommand("select * from dbo.tblPrintDetails where tblPrintDetails.BillNo ='" + bill + "'", sql);
-            SqlCommand myCommand = new SqlCommand("SELECT * FROM dbo.tblPerson , dbo.tblPrintDetails where tblPrintDetails.BillNo = '"+bill+"' and tblPrintDetails.BillNo = tblPerson.BillNo", sql);
-
-            myReaderw = myCommand.ExecuteReader();
 
 
+            SqlDataAdapter adapt = new SqlDataAdapter("SELECT  SUM(CONVERT(int,dbo.tblPrintDetails.Sft)) as sft FROM dbo.tblPrintDetails WHERE dbo.tblPrintDetails.BillNo = '" + bill + "'", sql);
+            DataTable dt = new DataTable();
+            adapt.Fill(dt);
 
-            while (myReaderw.Read())
+
+            if (dt.Rows.Count > 0)
             {
+                string ss = dt.Rows[0]["sft"].ToString();
+                SftValue = ss;
+                //MessageBox.Show(ss);
+                sql.Close();
 
-                string val1 = myReaderw["Sft"].ToString();
-                val = val1;
-                
             }
 
-            //MessageBox.Show(val.ToString());
-            string txtboxamount = txtPriceValue.Text.ToString();
+
+                //MessageBox.Show(val.ToString());
+                string txtboxamount = txtPriceValue.Text.ToString();
             int parseToint;
             int txtboxValue;
-            int.TryParse(val, out parseToint);
+
+            int.TryParse(SftValue, out parseToint);
 
             int.TryParse(txtboxamount, out txtboxValue);
 
@@ -208,7 +299,37 @@ namespace RBSoft.Forms
         }
         #endregion
 
-
+        //Check is data Already insert !!!
+        public void CheckDBDATA()
+        {
+            int ValOFTempAcmout;
+            int.TryParse(CheckValAmountTemp, out ValOFTempAcmout);
+            if (ValOFTempAcmout > 0)
+            {
+                txtAmount.Text = CheckValAmountTemp.ToString();
+                txtPay.Text = CheckValPayTemp.ToString();
+                txtDue.Text = CheckValDueTemp.ToString();
+                txtDate.Text = "Data Stored in " + CheckDateTemp.ToString();
+                btnCalculate.Hide();
+                btnGetAmountCal.Hide();
+                btnRecordAndPrint.Hide();
+                MessageBox.Show("Recod Found");
+                CheckValAmountTemp = "0";
+                btnPrintOnly.Show();
+            }
+            else
+            {
+                txtDue.Text = "";
+                txtDate.Text = "Present Date : " + date.ToString();
+                txtAmount.Text = "";
+                txtPay.Text = "";
+                btnCalculate.Show();
+                btnGetAmountCal.Show();
+                //btnRecordAndPrint.Show();
+                btnPrintOnly.Show();
+            }
+            
+        }
 
         private void btnGetAmount(object sender, EventArgs e)
         {
@@ -221,7 +342,92 @@ namespace RBSoft.Forms
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+            int valueofAmount , valueofPay , valueofDue;
+            int.TryParse(txtAmount.Text.ToString(), out valueofAmount);
+            int.TryParse(txtPay.Text.ToString(), out valueofPay);
+            if( valueofAmount > valueofPay)
+            {
+                valueofDue = valueofAmount - valueofPay;
+                txtDue.Text = valueofDue.ToString();
+            }else
+            {
+                txtPay.Text = "";
+                MessageBox.Show("Amount is SMALLER then Payment");
+            }
+            btnRecordAndPrint.Show();
+        }
 
+
+
+        private void btnRecordDataAndPrint(object sender, EventArgs e)
+        {
+            string amountGet, paymentGet , dueGet , PerSFTGet;
+
+            amountGet = txtAmount.Text.ToString();
+            dueGet = txtDue.Text.ToString();
+            paymentGet = txtPay.Text.ToString();
+            PerSFTGet = txtPriceValue.Text.ToString();
+
+            try
+            {
+                SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
+                SqlCommand CheckOUT = new SqlCommand();
+
+
+                CheckOUT.CommandText = "INSERT INTO dbo.tblaccount(BillNo,tkAmount,tkPayment,tkDue,PresentDate,PresentTime,tkPerSft) VALUES (@BillNo, @tkAmount, @tkPayment,@tkDue,@PresentDate,@PresentTime,@tkPerSft)";
+
+                CheckOUT.CommandType = CommandType.Text;
+                CheckOUT.Connection = sql;
+
+
+                CheckOUT.Parameters.AddWithValue("BillNo", Bill_no_var);
+                CheckOUT.Parameters.AddWithValue("tkAmount", amountGet);
+                CheckOUT.Parameters.AddWithValue("tkPayment", paymentGet);
+                CheckOUT.Parameters.AddWithValue("tkDue", dueGet);
+                CheckOUT.Parameters.AddWithValue("PresentDate", date);
+                CheckOUT.Parameters.AddWithValue("PresentTime", time);
+                CheckOUT.Parameters.AddWithValue("tkPerSft", PerSFTGet);
+
+                sql.Open();
+                CheckOUT.ExecuteNonQuery();
+                sql.Close();
+                MessageBox.Show("Data Recoreded");
+            }
+            catch
+            {
+                MessageBox.Show("Data Not Store Check Connection ");
+            }
+            reset();
+        }
+
+
+        public void reset()
+        {
+            txtClientName.Text = "No Date";
+            txtClientPhnNo.Text = "No Date";
+            txtClientAddress.Text = "No Date";
+            ShowTheOrder.DataSource = null;
+            ShowTheOrder.Rows.Clear();
+            txtAmount.Text = "Click Calculate";
+            txtPay.Text = "";
+            txtDue.Text = "";
+            billno.Text = "";
+            txtDate.Text = "";
+        }
+
+        private void btnReset(object sender, EventArgs e)
+        {
+            reset();
+        }
+
+        private void btnGoback_Click(object sender, EventArgs e)
+        {
+            MainMenuWorkChoice mainC = new MainMenuWorkChoice();
+            this.Hide();
+            mainC.Show();
+
+            //Temp Code It must be remove 
+            this.Close();
         }
     }
 }
