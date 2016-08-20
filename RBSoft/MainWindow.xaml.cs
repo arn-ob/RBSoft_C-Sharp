@@ -30,7 +30,10 @@ namespace RBSoft
 
         int loginAttempt = 0;
 
-       
+        public static string getip;
+        public static string Getpass;
+        public static string getusername;
+
 
 
 
@@ -38,7 +41,7 @@ namespace RBSoft
         {
             InitializeComponent();
             //checkConnection();
-
+            
         }
 
         #region OldCode
@@ -68,6 +71,7 @@ namespace RBSoft
                 {
                     SqlStatus.Text = "Connected";
                     sql.Close();
+                    
                 }
             }
             catch
@@ -77,6 +81,12 @@ namespace RBSoft
 
         }
 
+        public void check()
+        {
+            getip = ip.ToString();
+            getusername = username.ToString();
+            Getpass = pass.ToString();
+        }
 
 
 

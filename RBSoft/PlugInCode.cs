@@ -41,7 +41,7 @@ namespace RBSoft.Plugin
         {
 
 
-            //public static string SrvName = @"localhost"; //Your SQL Server Name
+            //public static string SrvName = @"192.168.0.2"; //Your SQL Server Name
             public static string DbName = @"RBBD";//Your Database Name
            // public static string UsrName = "sa";//Your SQL Server User Name
             //public static string Pasword = "01746H3llow?arn";//Your SQL Server Password
@@ -91,6 +91,8 @@ namespace RBSoft.Plugin
 
             public static string ConnString()
             {
+                //return "Data Source=" + MainWindow.getip + "; initial catalog=" + DbName + "; user id="+MainWindow.getusername+"; password="+MainWindow.Getpass+";";
+
                 if (MainWindow.conn == "true")
                 {
                     return "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
@@ -98,8 +100,8 @@ namespace RBSoft.Plugin
                 }
                 else
                 {
-                    return "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
-                + UsrName + "; password=" + Pasword + ";";
+                    return "Data Source=" + MainWindow.getip + "; initial catalog=" + DbName + "; user id=" + MainWindow.getusername + "; password=" + MainWindow.Getpass + ";";
+
                 }
             }
 
