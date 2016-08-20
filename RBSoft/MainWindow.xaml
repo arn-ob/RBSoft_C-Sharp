@@ -41,7 +41,7 @@
         <TextBox x:Name="ip" HorizontalAlignment="Left" Height="23" Margin="858,242,0,0" TextWrapping="Wrap" Text="192.168.0.101" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="username" HorizontalAlignment="Left" Height="23" Margin="858,282,0,0" TextWrapping="Wrap" Text="UserName" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="pass" HorizontalAlignment="Left" Height="23" Margin="858,320,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120"/>
-
+        
 
     </Grid>
 </Window>

@@ -26,6 +26,7 @@ namespace RBSoft
     {
         public static string role;
         public static string conn;
+
         public string EmpRole { get; set; }
 
         int loginAttempt = 0;
@@ -171,7 +172,7 @@ namespace RBSoft
                 if (dt.Rows.Count > 0)
                 {
                     sql.Close();
-                    MessageBox.Show("Login Sucess");
+                    MessageBox.Show("Login Success , Welcome To RBSoft");
 
                     // This is Default
                      MainMenuWorkChoice mainMenu = new MainMenuWorkChoice(); 
@@ -240,6 +241,9 @@ namespace RBSoft
         private void trustConn_Checked(object sender, RoutedEventArgs e)
         {
             conn = "true";
+            ip.IsEnabled = false;
+            username.IsEnabled = false;
+            pass.IsEnabled = false;
         }
 
         private void trustConn_Unchecked(object sender, RoutedEventArgs e)
