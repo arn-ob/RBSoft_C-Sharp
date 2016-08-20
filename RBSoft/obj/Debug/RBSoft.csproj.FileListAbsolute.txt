@@ -84,3 +84,6 @@ M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Forms.frmPrintWork.resources
 M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Forms.frmEdit.resources
 M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Forms.frmEdit_frmEditClientData.resources
 M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Forms.frmEdit_frmEditAccountData.resources
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Forms.frmEmployee.resources
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Forms.FrmEmployee_CreateUser.resources
+M:\Git Project\RBSoft\RBSoft\obj\Debug\RBSoft.Forms.frmEmployee_EditUser.resources

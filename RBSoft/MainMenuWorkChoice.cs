@@ -16,6 +16,7 @@ namespace RBSoft
     {
         public static string role;
         public static string EmpUsername;
+        
         public static string EmpRole;
 
 
@@ -24,7 +25,8 @@ namespace RBSoft
             InitializeComponent();
             ShowRole();
             makeRoleBasedWork();
-            lblRole.Text = EmpUsername.ToString();
+            lblRole.Text = EmpRole.ToString();
+            lblYourName.Text = EmpUsername.ToString();
             //Code not Ready
             //AccessRole();
 
@@ -128,12 +130,11 @@ namespace RBSoft
         {
             if(EmpRole == "Developer")
             {
-                button4.Hide();
-                MessageBox.Show("Welcome Dev");
+                //MessageBox.Show("Welcome Dev");
             }
             else if (EmpRole == "Admin")
             {
-                MessageBox.Show("Welcome Admin");
+                //MessageBox.Show("Welcome Admin");
             }
             else if (EmpRole == "Designer")
             {
@@ -176,5 +177,11 @@ namespace RBSoft
             }
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Forms.frmEmployee empfrom = new Forms.frmEmployee();
+            this.Hide();
+            empfrom.Show();
+        }
     }
 }

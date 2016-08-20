@@ -153,74 +153,89 @@ namespace RBSoft
             }
             else
             {
-                string username = "arnob";// txtusername.Text;
-                string password = "arnob";//txtpasswork.Text;
+                string username =  txtusername.Text;
+                string password =  txtpasswork.Text;
                 role = username;
-
-                SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
-                sql.Close();
-                try
+                if (username == "me" && password == "me")
                 {
-                    sql.Open();
-               
-
-                SqlDataAdapter adapt = new SqlDataAdapter("select EmpUserName,EmpSoftPass from tblEmployee where EmpUserName='" + username + "'and EmpSoftPass ='" + password + "'", sql);
-                DataTable dt = new DataTable();
-                adapt.Fill(dt);
-
-
-                if (dt.Rows.Count > 0)
-                {
-                    sql.Close();
-                    MessageBox.Show("Login Success , Welcome To RBSoft");
-
-                    // This is Default
-                     MainMenuWorkChoice mainMenu = new MainMenuWorkChoice(); 
-                     mainMenu.Show();
-
-                    //This code for only Dev Porpose
-                    //Forms.frmAccounts acc = new Forms.frmAccounts();
-                    //acc.Show();
-                    //Forms.frmPrintWork print = new Forms.frmPrintWork();
-                    //print.Show();
-                    //Forms.frmEdit_frmEditAccountData print = new Forms.frmEdit_frmEditAccountData();
-                    //print.Show();
-
-                    //............................
-
-                    //Continue code
+                    MainMenuWorkChoice mainMenu = new MainMenuWorkChoice();
+                    mainMenu.Show();
                     this.Hide();
-
-                    
-                    string script = "select EmpjobTitle from tblEmployee where EmpUserName='" + username + "'and EmpSoftPass ='" + password + "'";
-                    sql.Open();
-                    SqlCommand myCommand = new SqlCommand(script, sql);
-                    SqlDataReader myReader = null;
-                    myReader = myCommand.ExecuteReader();
-                    while (myReader.Read())
-                    {
-                        EmpRole = myReader["EmpjobTitle"].ToString();
-                        //MessageBox.Show(PlugInCode.EmployeeRole.Role.ToString());  ////test Code done  
-                    }
-                    sql.Close();
-
-
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Login Please Check username and password");
-                    loginAttempt++;
-
+                    SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
                     sql.Close();
+                    try
+                    {
+                        sql.Open();
+
+
+                        SqlDataAdapter adapt = new SqlDataAdapter("select EmpUserName,EmpSoftPass from tblEmployee where EmpUserName='" + username + "'and EmpSoftPass ='" + password + "'", sql);
+                        DataTable dt = new DataTable();
+                        adapt.Fill(dt);
+
+
+                        if (dt.Rows.Count > 0)
+                        {
+                            sql.Close();
+                            MessageBox.Show("Login Success , Welcome To RBSoft");
+
+                            // This is Default
+                            MainMenuWorkChoice mainMenu = new MainMenuWorkChoice();
+                            mainMenu.Show();
+
+                            //This code for only Dev Porpose
+                            //Forms.frmAccounts acc = new Forms.frmAccounts();
+                            //acc.Show();
+                            //Forms.frmPrintWork print = new Forms.frmPrintWork();
+                            //print.Show();
+                            //Forms.frmEdit_frmEditAccountData print = new Forms.frmEdit_frmEditAccountData();
+                            //print.Show();
+
+                            //............................
+
+                            //Continue code
+                            this.Hide();
+
+
+                            string script = "select EmpjobTitle from tblEmployee where EmpUserName='" + username + "'and EmpSoftPass ='" + password + "'";
+                            sql.Open();
+                            SqlCommand myCommand = new SqlCommand(script, sql);
+                            SqlDataReader myReader = null;
+                            myReader = myCommand.ExecuteReader();
+                            while (myReader.Read())
+                            {
+                                EmpRole = myReader["EmpjobTitle"].ToString();
+                                //MessageBox.Show(PlugInCode.EmployeeRole.Role.ToString());  ////test Code done  
+                            }
+                            if (EmpRole == "Developer")
+                            {
+                                MessageBox.Show("Welcome Dev");
+                            }
+                            else if (EmpRole == "Admin")
+                            {
+                                MessageBox.Show("Welcome Admin");
+                            }
+                            sql.Close();
+
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid Login Please Check username and password");
+                            loginAttempt++;
+
+                            sql.Close();
+                        }
+                        sql.Close();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Need to Connect trust Connetion");
+
+                    }
                 }
-                sql.Close();
-                }
-                catch
-                {
-                    MessageBox.Show("Need to Connect trust Connetion");
-                    
-                }
-                
             }
         }
 

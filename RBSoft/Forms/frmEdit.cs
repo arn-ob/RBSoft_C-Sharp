@@ -79,6 +79,14 @@ namespace RBSoft.Forms
             }
         }
 
+        private void btn_Employee_Data_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Under Dev");
+        }
 
+        private void btn_print_Data_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Under Dev");
+        }
     }
 }

@@ -169,6 +169,12 @@
     <Compile Include="Forms\FrmEmployee_CreateUser.Designer.cs">
       <DependentUpon>FrmEmployee_CreateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmEmployee_EditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEmployee_EditUser.Designer.cs">
+      <DependentUpon>frmEmployee_EditUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmPrintWork.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmEmployee_CreateUser.resx">
       <DependentUpon>FrmEmployee_CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEmployee_EditUser.resx">
+      <DependentUpon>frmEmployee_EditUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPrintWork.resx">
       <DependentUpon>frmPrintWork.cs</DependentUpon>

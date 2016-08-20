@@ -47,7 +47,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btn_Delete_User
             // 
@@ -57,6 +56,7 @@
             this.btn_Delete_User.TabIndex = 8;
             this.btn_Delete_User.Text = "Delete User";
             this.btn_Delete_User.UseVisualStyleBackColor = true;
+            this.btn_Delete_User.Click += new System.EventHandler(this.btn_Delete_User_Click);
             // 
             // btn_Show_User
             // 
@@ -66,6 +66,7 @@
             this.btn_Show_User.TabIndex = 7;
             this.btn_Show_User.Text = "Edit  Data";
             this.btn_Show_User.UseVisualStyleBackColor = true;
+            this.btn_Show_User.Click += new System.EventHandler(this.btn_Show_User_Click);
             // 
             // btn_Edit_User
             // 
@@ -75,6 +76,7 @@
             this.btn_Edit_User.TabIndex = 6;
             this.btn_Edit_User.Text = "Edit User";
             this.btn_Edit_User.UseVisualStyleBackColor = true;
+            this.btn_Edit_User.Click += new System.EventHandler(this.btn_Edit_User_Click);
             // 
             // btnCreate_User
             // 
@@ -84,6 +86,7 @@
             this.btnCreate_User.TabIndex = 5;
             this.btnCreate_User.Text = "Create User";
             this.btnCreate_User.UseVisualStyleBackColor = true;
+            this.btnCreate_User.Click += new System.EventHandler(this.btnCreate_User_Click);
             // 
             // button1
             // 
@@ -93,6 +96,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Go Back";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmEmployee
             // 

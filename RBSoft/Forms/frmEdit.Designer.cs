@@ -66,6 +66,7 @@
             this.btn_Employee_Data.TabIndex = 2;
             this.btn_Employee_Data.Text = "Edit Employee Data";
             this.btn_Employee_Data.UseVisualStyleBackColor = true;
+            this.btn_Employee_Data.Click += new System.EventHandler(this.btn_Employee_Data_Click);
             // 
             // btn_print_Data
             // 
@@ -75,6 +76,7 @@
             this.btn_print_Data.TabIndex = 3;
             this.btn_print_Data.Text = "Edit Print Data";
             this.btn_print_Data.UseVisualStyleBackColor = true;
+            this.btn_print_Data.Click += new System.EventHandler(this.btn_print_Data_Click);
             // 
             // pictureBox1
             // 
