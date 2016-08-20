@@ -102,6 +102,13 @@ namespace RBSoft
                 
             }
         }
-        
+
+        private void btn_PrintWork(object sender, EventArgs e)
+        {
+            Forms.frmPrintWork printWork = new Forms.frmPrintWork();
+            this.Hide();
+            printWork.Show();
+            this.Close();
+        }
     }
 }

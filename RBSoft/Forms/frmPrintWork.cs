@@ -47,11 +47,25 @@ namespace RBSoft.Forms
                 StatusComboBx.Text = comboxData;
 
 
-
-                var data = (Byte[])(dr.Cells[9].Value);
-                var stream = new MemoryStream(data);
-                MediaPicture.Image = Image.FromStream(stream);
-                
+                try
+                {
+                     
+                    if (dr.Cells[9].Value.ToString() != "")
+                    {
+                        var data = (Byte[])(dr.Cells[9].Value);
+                        var stream = new MemoryStream(data);
+                        MediaPicture.Image = Image.FromStream(stream);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Picture Not Found");
+                    }
+                    
+                }
+                catch
+                {
+                    MessageBox.Show("Picture Not Found");
+                }
 
             }
             catch (Exception ex)
@@ -60,9 +74,7 @@ namespace RBSoft.Forms
             }
         }
 
-
-
-
+        
         private void btnRefresh(object sender, EventArgs e)
         {
             try
@@ -83,9 +95,7 @@ namespace RBSoft.Forms
             }
         }
 
-
-
-
+        
         private void btnTodayPrint(object sender, EventArgs e)
         {
             SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
@@ -182,8 +192,6 @@ namespace RBSoft.Forms
             }
         }
 
-        
-
         private void btn_GoBack(object sender, EventArgs e)
         {
             MainMenuWorkChoice mainC = new MainMenuWorkChoice();
@@ -197,19 +205,27 @@ namespace RBSoft.Forms
 
         private void btn_UpdateRecord(object sender, EventArgs e)
         {
-            string combox = StatusComboBx.Text.ToString();
-            SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
-            SqlCommand update = new SqlCommand();
+
+            if (ShowDataGridView.RowCount > 0 && txtBillNO.Text != "")
+            {
+                string combox = StatusComboBx.Text.ToString();
+                SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
+                SqlCommand update = new SqlCommand();
 
 
-            update.CommandText = "UPDATE dbo.tblPrintDetails  SET PrintStatus='" +combox+ "' WHERE BillNo = '" + txtBillNO.Text.ToString() + "'  AND SubBillNo = '" + txtSubBillNO.Text.ToString() + "'";
-            update.CommandType = CommandType.Text;
-            update.Connection = sql;
+                update.CommandText = "UPDATE dbo.tblPrintDetails  SET PrintStatus='" + combox + "' WHERE BillNo = '" + txtBillNO.Text.ToString() + "'  AND SubBillNo = '" + txtSubBillNO.Text.ToString() + "'";
+                update.CommandType = CommandType.Text;
+                update.Connection = sql;
 
-            sql.Open();
-            update.ExecuteNonQuery();
-            sql.Close();
-            MessageBox.Show("Data Updated");
+                sql.Open();
+                update.ExecuteNonQuery();
+                sql.Close();
+                MessageBox.Show("Data Updated");
+            }
+            else
+            {
+                MessageBox.Show("No Data Found For Update");
+            }
         }
     }
 }

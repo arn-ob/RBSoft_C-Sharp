@@ -139,6 +139,24 @@
     <Compile Include="Forms\frmAccount.Designer.cs">
       <DependentUpon>frmAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEdit.Designer.cs">
+      <DependentUpon>frmEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEdit_frmEditAccountData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEdit_frmEditAccountData.Designer.cs">
+      <DependentUpon>frmEdit_frmEditAccountData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEdit_frmEditClientData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEdit_frmEditClientData.Designer.cs">
+      <DependentUpon>frmEdit_frmEditClientData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmPrintWork.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +203,15 @@
     </Compile>
     <EmbeddedResource Include="Forms\frmAccount.resx">
       <DependentUpon>frmAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEdit.resx">
+      <DependentUpon>frmEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEdit_frmEditAccountData.resx">
+      <DependentUpon>frmEdit_frmEditAccountData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEdit_frmEditClientData.resx">
+      <DependentUpon>frmEdit_frmEditClientData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPrintWork.resx">
       <DependentUpon>frmPrintWork.cs</DependentUpon>

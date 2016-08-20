@@ -57,6 +57,7 @@
             this.btnUpdateRecord = new System.Windows.Forms.Button();
             this.btnGoBack = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ShowDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MediaPicture)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -321,12 +322,23 @@
             this.label9.TabIndex = 23;
             this.label9.Text = "Beta Version Not For Use";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(14, 14);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(129, 25);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Print Status ";
+            // 
             // frmPrintWork
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(929, 557);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnGoBack);
             this.Controls.Add(this.btnUpdateRecord);
@@ -391,5 +403,6 @@
         private System.Windows.Forms.Button btnUpdateRecord;
         private System.Windows.Forms.Button btnGoBack;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

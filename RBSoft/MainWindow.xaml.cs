@@ -165,7 +165,9 @@ namespace RBSoft
                     //This code for only Dev Porpose
                     //Forms.frmAccounts acc = new Forms.frmAccounts();
                     //acc.Show();
-                    Forms.frmPrintWork print = new Forms.frmPrintWork();
+                    //Forms.frmPrintWork print = new Forms.frmPrintWork();
+                    //print.Show();
+                    Forms.frmEdit_frmEditAccountData print = new Forms.frmEdit_frmEditAccountData();
                     print.Show();
 
                     //............................
