@@ -23,5 +23,19 @@ namespace RBSoft.Forms
             this.Hide();
             editClient.Show();
         }
+
+        private void GobackToMenuChoice(object sender, EventArgs e)
+        {
+            MainMenuWorkChoice gotoChoice = new MainMenuWorkChoice();
+            this.Hide();
+            gotoChoice.Show();
+        }
+
+        private void btneditAccount(object sender, EventArgs e)
+        {
+            Forms.frmEdit_frmEditAccountData editClient = new frmEdit_frmEditAccountData();
+            this.Hide();
+            editClient.Show();
+        }
     }
 }

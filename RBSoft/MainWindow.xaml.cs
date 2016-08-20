@@ -25,16 +25,19 @@ namespace RBSoft
     public partial class MainWindow : Window
     {
         public static string role;
-
+        public static string conn;
         public string EmpRole { get; set; }
 
         int loginAttempt = 0;
+
+       
+
 
 
         public MainWindow()
         {
             InitializeComponent();
-            checkConnection();
+            //checkConnection();
 
         }
 
@@ -145,8 +148,10 @@ namespace RBSoft
 
                 SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
                 sql.Close();
-                sql.Open();
-
+                try
+                {
+                    sql.Open();
+               
 
                 SqlDataAdapter adapt = new SqlDataAdapter("select EmpUserName,EmpSoftPass from tblEmployee where EmpUserName='" + username + "'and EmpSoftPass ='" + password + "'", sql);
                 DataTable dt = new DataTable();
@@ -159,16 +164,16 @@ namespace RBSoft
                     MessageBox.Show("Login Sucess");
 
                     // This is Default
-                    // MainMenuWorkChoice mainMenu = new MainMenuWorkChoice(); 
-                    // mainMenu.Show();
+                     MainMenuWorkChoice mainMenu = new MainMenuWorkChoice(); 
+                     mainMenu.Show();
 
                     //This code for only Dev Porpose
                     //Forms.frmAccounts acc = new Forms.frmAccounts();
                     //acc.Show();
                     //Forms.frmPrintWork print = new Forms.frmPrintWork();
                     //print.Show();
-                    Forms.frmEdit_frmEditAccountData print = new Forms.frmEdit_frmEditAccountData();
-                    print.Show();
+                    //Forms.frmEdit_frmEditAccountData print = new Forms.frmEdit_frmEditAccountData();
+                    //print.Show();
 
                     //............................
 
@@ -198,6 +203,13 @@ namespace RBSoft
                     sql.Close();
                 }
                 sql.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Need to Connect trust Connetion");
+                    
+                }
+                
             }
         }
 
@@ -214,5 +226,15 @@ namespace RBSoft
         //    frm1.Show();
         //}
         #endregion
+
+        private void trustConn_Checked(object sender, RoutedEventArgs e)
+        {
+            conn = "true";
+        }
+
+        private void trustConn_Unchecked(object sender, RoutedEventArgs e)
+        {
+            conn = "false";
+        }
     }
 }

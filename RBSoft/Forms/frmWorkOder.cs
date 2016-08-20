@@ -133,16 +133,35 @@ namespace RBSoft.Forms
         /// <param name="e"></param>
         public void Clear()
         {
-            txtName.Text = "";
-            txtAddress.Text = "";
-            txtMobile.Text = "";
-            txtHight.Text = "";
-            txtQnt.Text = "";
-            txtSft.Text = "";
-            txtWide.Text = "";
-            listView1.Clear();
-            StatusComBox.Text = "";
-            MediaComBox.Text = "";
+           
+            //DataEntry.DataEntry de = new DataEntry.DataEntry();
+            Forms.frmWorkOder frm1 = new Forms.frmWorkOder();
+            this.Close();
+            this.Hide();
+            frm1.Show();
+            //InitializeComponent();
+            //txtName.Text = "";
+            //txtAddress.Text = "";
+            //txtMobile.Text = "";
+            //txtHight.Text = "";
+            //txtQnt.Text = "";
+            //txtSft.Text = "";
+            //txtWide.Text = "";
+            ////this.listView1.Items.Count = "0";
+            //if (listView1.Items.Count == 0) return;
+            //var col = listView1.Columns.Cast<ColumnHeader>()
+            //                    .Select((x, i) => new { x, i })
+            //                    .FirstOrDefault(a => a.x.Text == "ID");
+
+            //if (col == null) return;
+
+            //foreach (ListViewItem item in listView1.Items)
+            //{
+            //    item.SubItems[col.i].Text = "";
+            //}
+            //StatusComBox.Text = "";
+            //MediaComBox.Text = "";
+
         }
         
         private void ClearEveryThing(object sender, EventArgs e)
@@ -179,6 +198,8 @@ namespace RBSoft.Forms
         /// <param name="e"></param>
         private void AtToPrint(object sender, EventArgs e)
         {
+           
+
             ProceedToPrint.Show();
             string printType = MediaComBox.Text;
             string status = StatusComBox.Text;
@@ -237,7 +258,7 @@ namespace RBSoft.Forms
         private void ClearPrintList(object sender, EventArgs e)
         {
             ProceedToPrint.Hide();
-            listView1.Clear();
+            Clear();
         }
 
 
@@ -331,7 +352,7 @@ namespace RBSoft.Forms
                     }
                     
                     MessageBox.Show("Data Entry Successfully");
-
+                    Clear();
                 }
                 catch (Exception ex)
                 {

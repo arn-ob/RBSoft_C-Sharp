@@ -216,6 +216,7 @@
             this.grpAccount.TabIndex = 8;
             this.grpAccount.TabStop = false;
             this.grpAccount.Text = "Account";
+            this.grpAccount.Enter += new System.EventHandler(this.grpAccount_Enter);
             // 
             // txtDate
             // 
@@ -359,6 +360,7 @@
             this.btnPrintOnly.TabIndex = 12;
             this.btnPrintOnly.Text = "Only Print Invoice";
             this.btnPrintOnly.UseVisualStyleBackColor = true;
+            this.btnPrintOnly.Click += new System.EventHandler(this.btnOnlyInvoice);
             // 
             // button1
             // 

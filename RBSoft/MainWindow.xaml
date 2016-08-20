@@ -37,6 +37,7 @@
         <TextBox x:Name="txtpasswork" HorizontalAlignment="Left" Margin="464,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" Height="24" FontSize="16" IsEnabled="True" Foreground="White" Background="Black" FontWeight="Bold" AcceptsTab="True"/>
         <Label x:Name="label" Content="Username :" HorizontalAlignment="Left" Margin="364,228,0,0" VerticalAlignment="Top" Width="100" FontSize="18"/>
         <Label x:Name="label1" Content="Password :" HorizontalAlignment="Left" Margin="364,266,0,0" VerticalAlignment="Top" Width="95" FontSize="18"/>
+        <CheckBox x:Name="trustConn" Content="TrustConnection" HorizontalAlignment="Left" Margin="858,213,0,0" VerticalAlignment="Top" Checked="trustConn_Checked" Unchecked="trustConn_Unchecked"/>
 
 
     </Grid>

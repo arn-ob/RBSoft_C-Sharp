@@ -49,8 +49,8 @@ namespace RBSoft.Plugin
             //private static string DbName;
             private static string UsrName;
             private static string Pasword;
-            private static string Mode;
-            private static string getMOde;
+           // private static string Mode;
+            //private static string getMOde;
             /// <summary>
             /// Public static method to access connection string throw out the project 
             /// </summary>
@@ -91,9 +91,16 @@ namespace RBSoft.Plugin
 
             public static string ConnString()
             {
-                return "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
-                     + UsrName + "; password=" + Pasword + ";Trusted_Connection=yes;";//Build Connection String and Return
-
+                if (MainWindow.conn == "true")
+                {
+                    return "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
+                         + UsrName + "; password=" + Pasword + ";Trusted_Connection=yes;";//Build Connection String and Return
+                }
+                else
+                {
+                    return "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
+                + UsrName + "; password=" + Pasword + ";";
+                }
             }
 
          }

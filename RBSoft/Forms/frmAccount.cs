@@ -37,6 +37,7 @@ namespace RBSoft.Forms
             btnPrintOnly.Hide();
             btnGetAmountCal.Hide();
             Bill_no_var = billno.Text.ToString();
+            //txtAmount.Text = "Click Calculate";
 
         }
         #endregion
@@ -47,11 +48,14 @@ namespace RBSoft.Forms
         #region Process Button
         private void btn_Proceed(object sender, EventArgs e)
         {
+            //txtAmount.Text = "Click Calculate";
+            txtPriceValue.Text = "20";
             SftValue = "0";
             txtDate.Text = "Present Date :" + date.ToString();
             txtPay.ReadOnly = true;
             SearchMemberByID();
             CheckDBDATA();
+            txtPriceValue.ReadOnly = false;
             
 
         }
@@ -78,10 +82,12 @@ namespace RBSoft.Forms
             {
                 sql.Close();
                 GetDataToTextField(Bill_no_var);
+                GetData.Hide();
             }
             else
             {
                 MessageBox.Show("Bill Not Found");
+                GetData.Show();
             }
 
         }
@@ -316,12 +322,13 @@ namespace RBSoft.Forms
                 MessageBox.Show("Recod Found");
                 CheckValAmountTemp = "0";
                 btnPrintOnly.Show();
+                GetData.Hide();
             }
             else
             {
                 txtDue.Text = "";
                 txtDate.Text = "Present Date : " + date.ToString();
-                txtAmount.Text = "";
+                txtAmount.Text = "Click Calculate";
                 txtPay.Text = "";
                 btnCalculate.Show();
                 btnGetAmountCal.Show();
@@ -338,6 +345,7 @@ namespace RBSoft.Forms
             this.IsAccessible = false;
             btnCalculate.IsAccessible = true;
             btnRecordAndPrint.IsAccessible = false;
+            txtPriceValue.ReadOnly = true;
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
@@ -345,7 +353,7 @@ namespace RBSoft.Forms
             int valueofAmount , valueofPay , valueofDue;
             int.TryParse(txtAmount.Text.ToString(), out valueofAmount);
             int.TryParse(txtPay.Text.ToString(), out valueofPay);
-            if( valueofAmount > valueofPay)
+            if( valueofAmount >= valueofPay )
             {
                 valueofDue = valueofAmount - valueofPay;
                 txtDue.Text = valueofDue.ToString();
@@ -413,6 +421,7 @@ namespace RBSoft.Forms
             txtDue.Text = "";
             billno.Text = "";
             txtDate.Text = "";
+            GetData.Show();
         }
 
         private void btnReset(object sender, EventArgs e)
@@ -428,6 +437,16 @@ namespace RBSoft.Forms
 
             //Temp Code It must be remove 
             this.Close();
+        }
+
+        private void btnOnlyInvoice(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not Accessible");
+        }
+
+        private void grpAccount_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

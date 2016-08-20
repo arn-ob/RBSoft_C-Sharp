@@ -146,6 +146,7 @@
             this.button2.TabIndex = 27;
             this.button2.Text = "GO BACK";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.GoBack_EditMenu);
             // 
             // label7
             // 
@@ -162,10 +163,11 @@
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Location = new System.Drawing.Point(12, 505);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(726, 34);
+            this.button1.Size = new System.Drawing.Size(777, 34);
             this.button1.TabIndex = 26;
             this.button1.Text = "UPDATE DATA";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btn_updateAccountData);
             // 
             // txtPreAmount
             // 

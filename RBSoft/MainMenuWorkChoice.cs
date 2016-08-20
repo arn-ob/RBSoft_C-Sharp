@@ -110,5 +110,13 @@ namespace RBSoft
             printWork.Show();
             this.Close();
         }
+
+        private void gotoFrmEdit(object sender, EventArgs e)
+        {
+            Forms.frmEdit frmedit = new Forms.frmEdit();
+            this.Hide();
+            frmedit.Show();
+            this.Close();
+        }
     }
 }
