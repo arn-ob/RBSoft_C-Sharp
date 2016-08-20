@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RBSoft.exe" size="2299904">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RBSoft.exe" size="2301440">
       <assemblyIdentity name="RBSoft" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OMRjlTrQ++uSmSiUj+B4f02Qd3wshI06hgjzhve9S+M=</dsig:DigestValue>
+        <dsig:DigestValue>bC6h+dWCUuYJUhQCFdu4fW5stIFmVbY6a6QkHW1TRIc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

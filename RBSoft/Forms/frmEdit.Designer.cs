@@ -73,7 +73,7 @@
             this.btn_print_Data.Name = "btn_print_Data";
             this.btn_print_Data.Size = new System.Drawing.Size(125, 113);
             this.btn_print_Data.TabIndex = 3;
-            this.btn_print_Data.Text = "Print Data";
+            this.btn_print_Data.Text = "Edit Print Data";
             this.btn_print_Data.UseVisualStyleBackColor = true;
             // 
             // pictureBox1

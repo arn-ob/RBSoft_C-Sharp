@@ -37,5 +37,48 @@ namespace RBSoft.Forms
             this.Hide();
             editClient.Show();
         }
+
+        public void makeRoleBasedWork()
+        {
+            if (MainMenuWorkChoice.EmpRole == "Developer")
+            {
+                //MessageBox.Show("Welcome Dev");
+            }
+            else if (MainMenuWorkChoice.EmpRole == "Admin")
+            {
+                //MessageBox.Show("Welcome Admin");
+            }
+            else if (MainMenuWorkChoice.EmpRole == "Designer")
+            {
+                btn_Edit_clientData.Show(); 
+
+                btn_Account_Data.Hide(); 
+                btn_Employee_Data.Hide(); 
+                btn_print_Data.Show(); 
+
+                
+            }
+            else if (MainMenuWorkChoice.EmpRole == "Printer")
+            {
+                btn_Edit_clientData.Hide(); 
+
+                btn_Account_Data.Hide(); 
+                btn_Employee_Data.Hide();
+                btn_print_Data.Show(); 
+            }
+            else if (MainMenuWorkChoice.EmpRole == "Account")
+            {
+                btn_Edit_clientData.Show(); 
+
+                btn_Account_Data.Show(); 
+                btn_Employee_Data.Hide(); 
+                btn_print_Data.Hide();
+            }else
+            {
+                MessageBox.Show("Who Are U ?");
+            }
+        }
+
+
     }
 }

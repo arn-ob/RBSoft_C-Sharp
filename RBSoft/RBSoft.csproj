@@ -157,6 +157,18 @@
     <Compile Include="Forms\frmEdit_frmEditClientData.Designer.cs">
       <DependentUpon>frmEdit_frmEditClientData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEmployee_CreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEmployee_CreateUser.Designer.cs">
+      <DependentUpon>FrmEmployee_CreateUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmPrintWork.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +224,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEdit_frmEditClientData.resx">
       <DependentUpon>frmEdit_frmEditClientData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEmployee_CreateUser.resx">
+      <DependentUpon>FrmEmployee_CreateUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPrintWork.resx">
       <DependentUpon>frmPrintWork.cs</DependentUpon>

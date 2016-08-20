@@ -95,8 +95,8 @@ namespace RBSoft.Plugin
 
                 if (MainWindow.conn == "true")
                 {
-                    return "Data Source=" + SrvName + "; initial catalog=" + DbName + "; user id="
-                         + UsrName + "; password=" + Pasword + ";Trusted_Connection=yes;";//Build Connection String and Return
+                    return "Data Source=" + MainWindow.getip + "; initial catalog=" + DbName + "; user id="
+                         + MainWindow.getusername + "; password=" + MainWindow.Getpass + ";Trusted_Connection=yes;";//Build Connection String and Return
                 }
                 else
                 {

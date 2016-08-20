@@ -44,8 +44,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.IAMa = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblYourName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -204,11 +206,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(640, 190);
+            this.label7.Location = new System.Drawing.Point(651, 190);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.Size = new System.Drawing.Size(60, 13);
             this.label7.TabIndex = 13;
-            this.label7.Text = "You are : ";
+            this.label7.Text = "Your Role :";
             // 
             // label8
             // 
@@ -218,14 +220,14 @@
             this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 14;
             // 
-            // IAMa
+            // lblRole
             // 
-            this.IAMa.AutoSize = true;
-            this.IAMa.Location = new System.Drawing.Point(696, 191);
-            this.IAMa.Name = "IAMa";
-            this.IAMa.Size = new System.Drawing.Size(44, 13);
-            this.IAMa.TabIndex = 15;
-            this.IAMa.Text = "Not Get";
+            this.lblRole.AutoSize = true;
+            this.lblRole.Location = new System.Drawing.Point(710, 191);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(44, 13);
+            this.lblRole.TabIndex = 15;
+            this.lblRole.Text = "Not Get";
             // 
             // pictureBox1
             // 
@@ -237,6 +239,24 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(501, 190);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 13);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Your Name :";
+            // 
+            // lblYourName
+            // 
+            this.lblYourName.AutoSize = true;
+            this.lblYourName.Location = new System.Drawing.Point(568, 191);
+            this.lblYourName.Name = "lblYourName";
+            this.lblYourName.Size = new System.Drawing.Size(44, 13);
+            this.lblYourName.TabIndex = 18;
+            this.lblYourName.Text = "Not Get";
+            // 
             // MainMenuWorkChoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,8 +265,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(778, 462);
             this.ControlBox = false;
+            this.Controls.Add(this.lblYourName);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.IAMa);
+            this.Controls.Add(this.lblRole);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -288,7 +310,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label IAMa;
+        private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblYourName;
     }
 }

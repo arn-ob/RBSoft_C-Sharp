@@ -15,14 +15,16 @@ namespace RBSoft
     public partial class MainMenuWorkChoice : Form
     {
         public static string role;
-        public static string val1;
+        public static string EmpUsername;
+        public static string EmpRole;
 
 
         public MainMenuWorkChoice()
         { 
             InitializeComponent();
             ShowRole();
-            IAMa.Text = val1.ToString();
+            makeRoleBasedWork();
+            lblRole.Text = EmpUsername.ToString();
             //Code not Ready
             //AccessRole();
 
@@ -76,32 +78,7 @@ namespace RBSoft
            
 
         }
-        // Test data 
-        public static void ShowRole()
-        {
-            string r = MainWindow.role.ToString();
-            
-            SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
-            sql.Close();
-            DataTable dt = new DataTable();
-            sql.Open();
-            SqlDataReader myReaderw = null;
-
-            SqlCommand myCommand = new SqlCommand("select * from dbo.tblEmployee where tblEmployee.EmpUserName ='" + r + "'", sql);
-
-             myReaderw = myCommand.ExecuteReader();
-
-
-
-            while (myReaderw.Read())
-            {
-
-               val1 = myReaderw["EmpUserName"].ToString();
-                //string val2 = myReaderw["PersonPhnNo"].ToString();
-                //string val3 = myReaderw["PersonAddress"].ToString();
-                
-            }
-        }
+       
 
         private void btn_PrintWork(object sender, EventArgs e)
         {
@@ -118,5 +95,86 @@ namespace RBSoft
             frmedit.Show();
             this.Close();
         }
+
+        // Test data 
+        public static void ShowRole()
+        {
+            role = MainWindow.role.ToString();
+
+            SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
+            sql.Close();
+            DataTable dt = new DataTable();
+            sql.Open();
+            SqlDataReader myReaderw = null;
+
+            SqlCommand myCommand = new SqlCommand("select * from dbo.tblEmployee where tblEmployee.EmpUserName ='" + role + "'", sql);
+
+            myReaderw = myCommand.ExecuteReader();
+
+
+
+            while (myReaderw.Read())
+            {
+
+                EmpUsername = myReaderw["EmpUserName"].ToString();
+                EmpRole = myReaderw["EmpjobTitle"].ToString();
+                //string val2 = myReaderw["PersonPhnNo"].ToString();
+                //string val3 = myReaderw["PersonAddress"].ToString();
+
+            }
+        }
+
+        public void makeRoleBasedWork()
+        {
+            if(EmpRole == "Developer")
+            {
+                button4.Hide();
+                MessageBox.Show("Welcome Dev");
+            }
+            else if (EmpRole == "Admin")
+            {
+                MessageBox.Show("Welcome Admin");
+            }
+            else if (EmpRole == "Designer")
+            {
+                button1.Show(); // Work Oder
+
+                button2.Hide(); // Search
+                button4.Hide(); // Account
+                button5.Hide(); // Employee
+
+                button7.Show(); //Edit Data
+
+                button6.Hide(); // Print Work
+            }
+            else if (EmpRole == "Printer")
+            {
+                button1.Hide(); // Work Oder
+
+                button2.Hide(); // Search
+                button4.Hide(); // Account
+                button5.Hide(); // Employee
+
+                button7.Show(); //Edit Data   //Show
+
+                button6.Show(); // Print Work  //Show
+            }
+            else if (EmpRole == "Account")
+            {
+                button1.Hide(); // Work Oder
+
+                button2.Hide(); // Search
+                button4.Show(); // Account  //Show
+                button5.Hide(); // Employee
+
+                button7.Show(); //Edit Data  // Show
+
+                button6.Hide(); // Print Work
+            }else
+            {
+                MessageBox.Show("Who Are U ?");
+            }
+        }
+
     }
 }
