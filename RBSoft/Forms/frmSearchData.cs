@@ -25,7 +25,7 @@ namespace RBSoft.Forms
             InitializeComponent();
 
             //Hide All the Form
-            OnlyBillNoShowGrid.Hide();
+            
             AllDataShowGridView.Hide();
         }
 
@@ -38,7 +38,7 @@ namespace RBSoft.Forms
         /// <param name="e"></param>
         private void BtnSearchClick(object sender, EventArgs e)
         {
-            OnlyBillNoShowGrid.Hide();
+           
             AllDataShowGridView.Hide();
             selectSearchType();  //........ [1]
         }
@@ -72,7 +72,15 @@ namespace RBSoft.Forms
             {
                 search_And_Show_only_BillNo(); //................... [4]
             }
-            else
+            else if (typeStore == "Due Bill")
+            {
+                search_And_Show_only_Due(); //................... [4]
+            }
+            else if (typeStore == "All Account")
+            {
+                search_And_Show_All_Account(); //................... [4]
+            }
+            else 
             {
                 MessageBox.Show("Search Not Found");
             }
@@ -104,21 +112,62 @@ namespace RBSoft.Forms
             }
 
 
-            /// <summary>
-            /// it search all the bill no which is regesterd to the DB
-            /// </summary>
-            public void search_And_Show_only_BillNo()
+        public void search_And_Show_All_Account()
+        {
+            try
+            {
+                SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
+                sql.Open();
+                AllDataShowGridView.Show();
+
+                SqlDataAdapter adapt = new SqlDataAdapter("select * from dbo.tblaccount ", sql);
+                DataTable dt = new DataTable();
+                adapt.Fill(dt);
+                AllDataShowGridView.DataSource = dt;
+                sql.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+
+        public void search_And_Show_only_Due()
+        {
+            try
+            {
+                SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
+                sql.Open();
+                AllDataShowGridView.Show();
+
+                SqlDataAdapter adapt = new SqlDataAdapter("select * from dbo.tblaccount where not tblaccount.tkDue='0'", sql);
+                DataTable dt = new DataTable();
+                adapt.Fill(dt);
+                AllDataShowGridView.DataSource = dt;
+                sql.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+        /// <summary>
+        /// it search all the bill no which is regesterd to the DB
+        /// </summary>
+        public void search_And_Show_only_BillNo()
             {
                 try
                 {
                     SqlConnection sql = new SqlConnection(PlugInCode.GetConnection.ConnString());
                     sql.Open();
-                    OnlyBillNoShowGrid.Show();
-
+                    
                     SqlDataAdapter adapt = new SqlDataAdapter("select BillNo from tblPerson", sql);
                     DataTable dt = new DataTable();
                     adapt.Fill(dt);
-                    OnlyBillNoShowGrid.DataSource = dt;
+                    AllDataShowGridView.DataSource = dt;
                     sql.Close();
                 }
                 catch (Exception ex)

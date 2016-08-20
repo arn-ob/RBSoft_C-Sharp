@@ -24,7 +24,7 @@ namespace RBSoft.Forms
         string BillNo = "Null";
         string SubBillNo = "Null";
         string date = DateTime.Now.Day + "." + DateTime.Now.Month + "." + DateTime.Now.Year;
-        string time = DateTime.Now.Hour + "." + DateTime.Now.Minute + "." + DateTime.Now.Second;
+        string time = DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
 
 
         #endregion //End of global Variable list

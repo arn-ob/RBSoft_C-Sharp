@@ -33,13 +33,11 @@
             this.SearchTypeComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.AllDataShowGridView = new System.Windows.Forms.DataGridView();
-            this.OnlyBillNoShowGrid = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnBack = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AllDataShowGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OnlyBillNoShowGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +56,9 @@
             this.SearchTypeComboBox.FormattingEnabled = true;
             this.SearchTypeComboBox.Items.AddRange(new object[] {
             "All Data Search",
-            "Bill Only"});
+            "Bill Only",
+            "Due Bill",
+            "All Account"});
             this.SearchTypeComboBox.Location = new System.Drawing.Point(215, 193);
             this.SearchTypeComboBox.Name = "SearchTypeComboBox";
             this.SearchTypeComboBox.Size = new System.Drawing.Size(440, 21);
@@ -84,14 +84,6 @@
             this.AllDataShowGridView.ReadOnly = true;
             this.AllDataShowGridView.Size = new System.Drawing.Size(915, 332);
             this.AllDataShowGridView.TabIndex = 3;
-            // 
-            // OnlyBillNoShowGrid
-            // 
-            this.OnlyBillNoShowGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.OnlyBillNoShowGrid.Location = new System.Drawing.Point(12, 245);
-            this.OnlyBillNoShowGrid.Name = "OnlyBillNoShowGrid";
-            this.OnlyBillNoShowGrid.Size = new System.Drawing.Size(155, 332);
-            this.OnlyBillNoShowGrid.TabIndex = 4;
             // 
             // button1
             // 
@@ -144,7 +136,6 @@
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.OnlyBillNoShowGrid);
             this.Controls.Add(this.AllDataShowGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SearchTypeComboBox);
@@ -153,7 +144,6 @@
             this.Name = "frmSearchData";
             this.Text = "frmSearchData";
             ((System.ComponentModel.ISupportInitialize)(this.AllDataShowGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OnlyBillNoShowGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -166,7 +156,6 @@
         private System.Windows.Forms.ComboBox SearchTypeComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView AllDataShowGridView;
-        private System.Windows.Forms.DataGridView OnlyBillNoShowGrid;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BtnBack;
